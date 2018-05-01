@@ -1,0 +1,293 @@
+
+/* ==========================================================================
+    01 - Navmenu
+========================================================================== */  
+
+@media only screen and (min-width:768px) {
+/* home section */	
+header {
+	padding: 1em 0;
+}
+/* nav-menu*/	
+.nav-collapse {
+	position: relative;
+	width: 70%;
+	float: right;
+	padding: 0 4%;
+}
+.nav-collapse.closed {
+	max-height: none;
+}
+.nav-list {
+	background-color: transparent;
+}
+.nav-list li {
+	display: table-cell;
+	float: none;
+	width: 80px;
+}
+.nav-toggle {
+	display: none;
+}
+.opaque .nav-list li a {
+	color: #717171;
+	border-bottom: none;
+}
+.opaque .nav-list li a:active {
+	background-color: transparent !important;
+}
+.opaque .nav-list li a:hover, .opaque .nav-list li.current a {
+	color: #cb261d;
+}
+
+/* logo text*/
+}
+
+/* ==========================================================================
+    02 - Smartphones (portrait)
+========================================================================== */  
+
+@media only screen and (max-width : 320px) {
+.fittext1{
+	line-height: 40px;
+}
+/* #home section*/	
+#home {
+	padding-top: 80px;
+	background: #ddd  url(../img/banner-mobile.jpg) no-repeat center;
+}
+#home .row {
+	padding: 5px;
+	padding-top: 12vh;
+}
+#home .flex-direction-nav {
+	display: none;
+}
+#timeline-horizontal {
+	padding-top: .9em;
+	width: 100%;
+	background-color: transparent;
+}
+#timeline-horizontal ul {
+	font-size: .9em;
+}
+	
+/* slogan section */	
+#slogan .columns {
+	width: 100%;
+	text-align: center;
+	float: left;
+	margin-bottom: 1.6em;
+}
+	
+/* function section */	
+#function .row > .content > .columns {
+	width: 100%;
+}
+#function .row > .content > .columns.pull-left, #function .row > .content > .columns.pull-right {
+	padding: 0;
+	float: left;
+}
+
+/* zozo.tab clean style content */	
+.z-tabs.clean.mobile > .z-container > .z-content > .z-content-inner > .content > .columns {
+	width: 100%;
+}
+.z-tabs.clean.mobile > .z-container > .z-content > .z-content-inner > .content > .columns.pull-left, .z-tabs.clean.mobile > .z-container > .z-content > .z-content-inner > .content > .columns.pull-right {
+	padding: 0;
+	float: left;
+}
+/* procedure section*/	
+#procedure .step .columns {
+	width: 100%;
+}
+#procedure .step .columns.pull-left, #procedure .step .columns.pull-right {
+	padding: 0;
+}
+#procedure .step .columns.pull-right {
+	float: left;
+}
+/* footer section */	
+footer {
+	letter-spacing: 0;
+}
+.bgcolor-01, .bgcolor-02 {
+	background-color: #fff;
+}
+}
+
+/* ==========================================================================
+    03 - iphone 6s (portrait)
+========================================================================== */  
+
+@media (min-width: 321px) and (max-width: 414px) {
+/* #home section*/		
+#home {
+	padding-top: 80px;
+	background: #ddd  url(../img/banner-mobile.jpg) no-repeat center;
+}
+#home .row {
+	padding: 5px;
+	padding-top: 12vh;
+}
+#home .flex-direction-nav {
+	display: none;
+}
+#timeline-horizontal {
+	padding-top: .9em;
+	width: 100%;
+	background-color: transparent;
+}
+#timeline-horizontal ul {
+	font-size: .9em;
+}
+/* slogan section */	
+#slogan .columns {
+	width: 100%;
+	text-align: center;
+	float: left;
+	margin-bottom: 1.6em;
+}
+#slogan .columns .card-icon {
+	width: 45%;
+	padding-bottom: 45%;
+}
+	
+/* function section */	
+#function .row > .content > .columns {
+	width: 100%;
+}
+#function .row > .content > .columns.pull-left, #function .row > .content > .columns.pull-right {
+	padding: 0;
+	float: left;
+}
+	
+/* zozo.tab clean style content */	
+.z-tabs.clean.mobile > .z-container > .z-content > .z-content-inner > .content > .columns {
+	width: 100%;
+}
+.z-tabs.clean.mobile > .z-container > .z-content > .z-content-inner > .content > .columns.pull-left, .z-tabs.clean.mobile > .z-container > .z-content > .z-content-inner > .content > .columns.pull-right {
+	padding: 0;
+	float: left;
+}	
+		
+/* procedure section*/	
+#procedure .step .columns {
+	width: 100%;
+}
+#procedure .step .columns.pull-left, #procedure .step .columns.pull-right {
+	padding: 0;
+}
+#procedure .step .columns.pull-right {
+	float: left;
+}
+}
+
+/* ==========================================================================
+    04 - iPads
+========================================================================== */  
+
+@media (min-width: 415px) and (max-width: 579px) {
+/* home section*/
+#home {
+	padding-top: 80px;
+}
+#home .row {
+	padding: 5px;
+	padding-top: 12vh;
+}
+#home .flex-direction-nav {
+	display: none;
+}
+#timeline-horizontal {
+	width: 95%;
+}
+#timeline-horizontal ul {
+	font-size: .95em;
+}
+/*slogan section */	
+#slogan .columns .card-icon {
+	width: 70%;
+	padding-bottom: 70%;
+}
+	
+/* function section */		
+#function .row > .content > .columns {
+	width: 100%;
+}
+#function .row > .content > .columns.pull-left, #function .row > .content > .columns.pull-right {
+	padding: 0;
+	float: left;
+}
+/* zozo.tab clean style content */	
+.z-tabs.clean.horizontal > .z-container > .z-content > .z-content-inner > .content > .columns {
+	width: 100%;
+}
+.z-tabs.clean.horizontal > .z-container > .z-content > .z-content-inner > .content > .columns.pull-left, .z-tabs.clean.horizontal > .z-container > .z-content > .z-content-inner > .content > .columns.pull-right {
+	padding: 0;
+	float: left;
+}
+/* procedure section*/	
+#procedure .step .columns {
+	width: 100%;
+}
+#procedure .step .columns.pull-left, #procedure .step .columns.pull-right {
+	padding: 0;
+}
+#procedure .step .columns.pull-right {
+	float: left;
+}
+}
+
+/* ==========================================================================
+    05 - iPads
+========================================================================== */  
+
+@media (min-width: 580px) and (max-width: 767px) {
+/* procedure section*/	
+#procedure .step .columns {
+	width: 100%;
+}
+#procedure .step .columns.pull-left, #procedure .step .columns.pull-right {
+	padding: 0;
+}
+#procedure .step .columns.pull-right {
+	float: left;
+}
+
+/* problem section */
+#problem .content .columns.pull-left, #problem .content .columns.pull-right{
+	float: left;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+/* function section*/
+	
+}
+
+@media only screen and (min-width: 1001px) {
+/* slogan section */
+#slogan {
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+}
+@media (min-width: 0) and (max-width: 767px) {
+/* function section*/
+	.mbshow{
+	display: inline;
+}
+	.pcshow{
+		display: none;
+	}
+}
+@media (min-width: 768px) and (max-width: 2500px) {
+/* function section*/
+.mbshow{
+	display: none;
+}
+.pcshow{
+	display:inline;
+}
+}

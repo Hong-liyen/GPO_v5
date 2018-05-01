@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/colorbox.css">	
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    <div class="wow fadeIn navbar anvbar-custom navbar-default navbar-fixed-top" role="navigation" data-wow-delay="0.2s">
+    </div>
+    <section class="wow fadeInDown visual" id="mainbanner">
+        <div id="alerthind">
+            <div id="alertboxout">
+                <div id="alertbox" class="alertboxone">
+                    <div class="alertcontent" v-for="(news,index) in newss" v-if="intopagevif(index)">
+                        <img class="alertbannerimg" :src="news.bannerimg" alt="">
+                        <div class="title">{{news.name}}</div>
+                        <div class="titleline"></div>
+                        <div class="time">{{news.time}}</div>
+                        <div class="txt" v-html="news.containtext">
+                        </div>
+                    </div>
+                    <div class="btnline">
+                        <a href="javascritp:;" id="cancelAlert">
+                            <div class="alertbtn">不再提醒我</div>
+                        </a>
+                        <a href="news.html#lightboxspan">
+                            <div class="alertbtn">查看更多活动</div>
+                        </a>
+                    </div>
+                </div>
+                <div id="alertbox" class="alertboxtwo">
+                    <div class="alertcontent" v-for="(news,index) in newss" v-if="intopagevif(index)">
+                        <img class="alertbannerimg" :src="news.bannerimg">
+                        <div class="title">{{news.name}}</div>
+                        <div class="titleline"></div>
+                        <div class="time">{{news.time}}</div>
+                        <div class="txt" v-html="news.containtext">
+                        </div>
+                    </div>
+                    <div class="btnline">
+                        <a href="news.html#lightboxspan">
+                            <div class="alertbtn">查看更多活动</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper topbanner">
+            <div class="topbanner-out">
+                <div  v-for="(news,index) in newss" v-if="news.istopbanner">
+                    <a @click="clickindex(index)" :href="news.link" :target="clicktoopen(index)"><img :class="{alertinfbox:news.clickto}" :src="news.mainbannerimg"></a>
+                </div>
+            </div>
+            <div class="linestyle"></div>
+        </div>
+        <a class="scroll" href="#mainVisual">Scroll
+            <span class="arrow"></span>
+        </a>
+    </section>	
+    <section class="wow fadeInDown visual" id="mainVisual">
+        <h1 class="wow fadeInDown" data-wow-delay="0.2s">Why us</h1>
+        <p class="wow fadeInUp" data-wow-delay="0.4s">为什么选择东方平台</p>
+			<span id="videoStared" class="play" data-toggle="modal" data-target="#largeModal">
+			    <img src="images/icon/playBtn.png">
+			</span>
+        <div id="largeModal" class="modal fade" role="dialog">
+            <div class="modal-lg modal-dialog" id="videoArea">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button id="closeVideo" type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="video-container">
+                        	<video id="opVideo" width="100%" controls loop>
+			                	<source src="./images/video/OP_demo_20180129.mp4" 
+			                		type="video/mp4">
+			                </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="scroll" href="#Advantages">Scroll
+            <span class="arrow"></span>
+        </a>
+    </section>
+    <section class="wow fadeInDown" id="Advantages">
+        <div class="container">
+            <div class="title">
+                <h3 class="wow fadeInUp" data-wow-delay="0.2s">东方优势
+                    <span>Advantages</span>
+                </h3>
+            </div>
+            <p class="wow fadeInDown" data-wow-delay="0.4s">丰富的平台应用，支持配合商户的运营</p>
+            <p class="wow fadeInDown" data-wow-delay="0.4s">一站解决商户需求，企业级通知，消息提醒更及时</p>
+            <div class="row">
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.6s">
+                    <img src="images/icon/icon01.png" alt="">
+                    <p>防攻击系统</p>
+                </div>
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.6s">
+                    <img src="images/icon/icon02.png" alt="">
+                    <p>免额度转换</p>
+                    <p>让游戏更尽兴</p>
+                </div>
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.6s">
+                    <img src="images/icon/icon03.png" alt="">
+                    <p>平台维护</p>
+                    <p>游戏互不影响</p>
+                </div>
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.6s">
+                    <img src="images/icon/icon04.png" alt="">
+                    <p>快速建站</p>
+                    <p>多皮肤案例提供</p>
+                </div>
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.8s">
+                    <img src="images/icon/icon05.png" alt="">
+                    <p>站长可自定义彩票赔率</p>
+                    <p>全方位风险管理</p>
+                </div>
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.8s">
+                    <img src="images/icon/icon06.png" alt="">
+                    <p>站长可自定义编辑</p>
+                    <p>优惠活动</p>
+                </div>
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.8s">
+                    <img src="images/icon/icon07.png" alt="">
+                    <p>强大运营分析系统</p>
+                    <p>即将推出</p>
+                </div>
+                <div class="wow fadeInDown col-sm-3 col-xs-6" data-wow-delay="0.8s">
+                    <img src="images/icon/icon08.png" alt="">
+                    <p>实时风险监控系统</p>
+                    <p>（保证每一个玩家的资金安全）</p>
+                </div>
+            </div>
+            <a class="scroll" href="#b2b">Scroll
+                <span class="arrow"></span>
+            </a>
+        </div>
+    </section>
+
+    <section class="wow fadeInDown" id="b2b">
+        <div class="container">
+            <img src="images/word/wordB2b.png" alt="">
+            <h3 class="wow fadeInUp" data-wow-delay="0.2s">业界首家自主研发</h3>
+            <h3 class="wow fadeInUp" data-wow-delay="0.2s">B2B彩票、体育项目</h3>
+            <div class="wow fadeInDown b2bItem" data-wow-delay="0.4s">
+                <li>
+                    <div class="icon">
+                        <h1>1</h1>
+                        <span>平台管理</span>
+                    </div>
+                    <p>平台自主将彩票、体育项目形成独立的管理系统
+                    </p>
+                </li>
+            </div>
+            <div class="wow fadeInDown b2bItem" data-wow-delay="0.4s">
+                <li>
+                    <div class="icon">
+                        <h1>2</h1>
+                        <span>减少成本</span>
+                    </div>
+                    <p>降低耦合度，系统可独立升级， 不需要受主系统影响，增加在线运营时长，减少了维护的成本
+                    </p>
+                </li>
+            </div>
+            <div class="wow fadeInDown b2bItem" data-wow-delay="0.4s">
+                <li>
+                    <div class="icon">
+                        <h1>3</h1>
+                        <span>产品体验</span>
+                    </div>
+                    <p>重视产品的玩家体验是我们的宗旨，把体验当成产品的重要部分
+                    </p>
+                </li>
+            </div>
+            <div class="wow fadeInDown b2bItem" data-wow-delay="0.4s">
+                <li>
+                    <div class="icon">
+                        <h1>4</h1>
+                        <span>全新感受</span>
+                    </div>
+                    <p>前所未有的流畅度，在游戏过程中给会员全新的感受
+                    </p>
+                </li>
+            </div>
+            <div class="wow fadeInDown b2bItem" data-wow-delay="0.4s">
+                <li>
+                    <div class="icon">
+                        <h1>5</h1>
+                        <span>完美整合</span>
+                    </div>
+                    <p>将其完美整合、稳定运行，充分让您的用户体验行业主流的各式游戏、各种玩法，可谓集大成者
+                    </p>
+                </li>
+            </div>
+        </div>
+        <a class="scroll" href="#bigData">Scroll
+            <span class="arrow"></span>
+        </a>
+    </section>
+    <section class="wow fadeInDown" id="bigData">
+        <div class="col-md-6 col-md-offset-6 bigDatabox">
+            <h3 class="wow fadeInUp" data-wow-delay="0.2s">大数据</h3>
+            <h3 class="wow fadeInUp" data-wow-delay="0.2s">处理能力</h3>
+            <div class="wow fadeInDown bigDataItembox" data-wow-delay="0.4s">
+                <div class="bigDataItem safety">
+                    <img src="images/icon/bigData01.png" alt="" width="20%">
+                    <p>专业级硬件</p>
+                    <p>稳定安全</p>
+                </div>
+                <div class="wow fadeInDown bigDataItem" data-wow-delay="0.4s">
+                    <img src="images/icon/bigData02.png" alt="" width="75%">
+                    <p>专业级服务</p>
+                    <p>响应高效</p>
+                </div>
+                <div class="wow fadeInDown bigDataItem" data-wow-delay="0.4s">
+                    <img src="images/icon/bigData03.png" alt="" width="75%">
+                    <p>专业级团队</p>
+                    <p>强大有序</p>
+                </div>
+            </div>
+        </div>
+        <a class="scroll" href="#payment">Scroll
+            <span class="arrow"></span>
+        </a>
+    </section>
+    <section class="wow fadeInDown" id="payment">
+        <h1 class="wow fadeInUp" data-wow-delay="0.2s">独立支付系统</h1>
+        <div class="paybox">
+            <div class="wow fadeInDown paymentItem" data-wow-delay="0.4s">
+                <img src="images/icon/payment01.png" alt="">
+                <p>通过商户自主开发支付方案</p>
+                <p>节省时间成本快速简单方便</p>
+            </div>
+            <div class="wow fadeInDown paymentItem" data-wow-delay="0.4s">
+                <img src="images/icon/payment02.png" alt="">
+                <p>组建一支专业的支付小组</p>
+                <p>专攻支付难题</p>
+            </div>
+            <div class="wow fadeInDown paymentItem" data-wow-delay="0.4s">
+                <img src="images/icon/payment03.png" alt="">
+                <p>使用独立系统维护支付产品</p>
+                <p>独立发布上线不影响其他业务点</p>
+            </div>
+            <div class="wow fadeInDown paymentItem" data-wow-delay="0.4s">
+                <img src="images/icon/payment04.png" alt="">
+                <p>做到了多、快、好、省</p>
+                <p>出入款即时到账</p>
+            </div>
+            <div class="wow fadeInDown paymentItem" data-wow-delay="0.4s">
+                <img src="images/icon/payment05.png" alt="">
+                <p>7*24小时不间歇的轮值人员</p>
+                <p>为您的网站资金保驾护航</p>
+            </div>
+        </div>
+        <a class="scroll" href="#playway">Scroll
+            <span class="arrow"></span>
+        </a>
+    </section>
+    <section class="wow fadeInDown" id="playway">
+        <div class="col-md-6 col-md-offset-6 wow fadeInDown" data-wow-delay="0.2s">
+            <h3 class="text wow fadeInDown" data-wow-delay="0.2s">丰富的游戏玩法</h3>
+            <span class="text wow fadeInUp" data-wow-delay="0.4s">东方彩票普及大众化．玩法丰富．更有安全保证</span>
+            <div class="playwayBox">
+                <div class="wow fadeInDown playwayItem" data-wow-delay="0.6s">
+                    <div class="icon">
+                        <h1>1</h1>
+                        <span>彩票类</span>
+                    </div>
+                    <p>轻奢风靡的质感</p>
+                    <p>引领业界潮流</p>
+                </div>
+                <div class="wow fadeInDown playwayItem" data-wow-delay="0.6s">
+                    <div class="icon">
+                        <h1>2</h1>
+                        <span>体育类</span>
+                    </div>
+                    <p>热门有趣的多样化</p>
+                    <p>游戏带动你的热情</p>
+                </div>
+                <div class="wow fadeInDown playwayItem" data-wow-delay="0.6s">
+                    <div class="icon">
+                        <h1>3</h1>
+                        <span>电子游艺类</span>
+                    </div>
+                    <p>上千款华丽</p>
+                    <p>有趣的主题帶给您成就感</p>
+                </div>
+                <div class="wow fadeInDown playwayItem" data-wow-delay="0.6s">
+                    <div class="icon">
+                        <h1>4</h1>
+                        <span>真人视讯类</span>
+                    </div>
+                    <p>动感神秘的女郎</p>
+                    <p>与您时时互动</p>
+                </div>
+            </div>
+        </div>
+        <a class="scroll" href="#cooperation">Scroll
+            <span class="arrow"></span>
+        </a>
+    </section>
+    <div class="wow fadeInDown" id="cooperation">
+        <h3 class="wow fadeInDown" data-wow-delay="0.2s">合作伙伴</h3>
+        <div class="wow fadeInDown supplier" data-wow-delay="0.4s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/OG.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/AG.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/bbin.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/MG.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/OPUS.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/DS.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/AB.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/LEBO.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/PT.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/MWG.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem">
+                        <img src="images/cooperation/SABA.png" alt="">
+                    </div>
+                    <div class="col-sm-2 col-xs-6 supplierItem comingSoon">
+                        <img src="images/cooperation/comingsoonLogo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="./cooperation.html" target="_self">
+        	<button class="joinUs">加入我們</button>
+        </a>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-lg-6">
+                <p>© ORIENTALPLATFORM.ALL RIGHT RESERVED.<span>版权所有 东方平台</span></p>
+            </div>
+            <div class="col-lg-6 text-right">
+                <div class="QQ">
+                    <span class="icon-qq-icon"> </span>
+                    <span class="icon-qq-num" 
+                        onclick="window.open('http://wpa.qq.com/msgrd?v=3&uin=2158999999&site=qq&menu=yes','_blank')">2158999999</span>
+                </div>
+                <div class="email">
+                    <span class="icon-mail"> </span>
+                    <p>Bwtgame88@gmail.com&nbsp;&nbsp;&nbsp;<span>opgame88@gmail.com</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="# " class="toTop " href="# " title="top ">
+        <span>
+            <p class="icon-keyboard_arrow_up">
+            </p>
+        </span>
+    </a>
+</body>
+<script src="js/jquery-2.1.0.min.js "></script>
+<script src="js/bootstrap.min.js "></script>
+<script src="js/jquery.nicescroll.min.js "></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script src="js/wow.min.js "></script>
+<script src="js/vue.js "></script>
+<script src="js/data.js "></script>
+<script src="js/script.js "></script>
+<script>
+    var videoSrc = $("#largeModal iframe").attr("src");
+    $('#largeModal').on('show.bs.modal', function() {
+        $("#largeModal iframe").attr("src", videoSrc + "?autoplay=1");
+    }).on('hidden.bs.modal', function(e) {
+        $("#largeModal iframe").attr("src", null);
+    });
+
+    var myVideo = document.getElementById('opVideo');
+    $("#videoStared").click(function(){
+        if (myVideo.paused){
+            myVideo.play();
+        } 
+    });
+    $("#closeVideo").click(function(){
+        if (!myVideo.paused){
+            myVideo.pause();
+        }
+    });
+    $("#largeModal").not("#videoArea").click(function(){
+        if (!myVideo.paused){
+            myVideo.pause();
+        }
+    });
+        var agent = navigator.userAgent.toLowerCase();
+        if (agent.match("android") || agent.match("iphone") || agent.match("ipad")) {
+            $('.topbanner-out').slick({ dots: false, infinite: true, pauseOnHover: false, slidesToShow: 1, autoplay: true, autoplaySpeed: 5000 });
+            } else {
+            $('.topbanner-out').slick({ draggable:false,dots: true, infinite: true, pauseOnHover: false, slidesToShow: 1, autoplay: true, autoplaySpeed: 5000 });
+        };
+        
+        $(".alertinfbox").click(function () {
+            outalertbox_fn();
+            setTimeout(outalertbox_fn2(), 500);
+        });
+        /*
+        $(".alertinfbox").click(outalertbox_fn(),function () {
+                outalertbox_fn2();
+            });
+        */
+        
+        $(function(){
+        	if(!getCookies("cancelAlert")){
+                initoutalertbox_fn0();
+                setTimeout(outalertbox_fn2(), 500);
+        	}
+        });
+        
+        
+        $("#cancelAlert").click(function(){
+            $.colorbox.close();
+            addCookie("cancelAlert","1",1)
+        })
+        
+        function initoutalertbox_fn0(){
+        	var alertboxw = $(window).width();
+            if (alertboxw > 1200) { alertboxw = 1200; }
+            var $form = $(".alertboxone");
+            //form状态样式
+            //".alertboxnoe"第一次进入跳窗状态
+            //".alertboxtwo"点及不再提醒我状态
+            $.colorbox({
+                //iframe: true,
+                inline: true,
+                href: $form,
+                width: alertboxw, //燈箱中間區塊的寬度
+            });
+        }
+        
+        
+        function outalertbox_fn2(){
+            //addniceScrollbar
+            $("#cboxLoadedContent").niceScroll({ scrollspeed: 51, mousescrollstep: 45, cursorwidth: "5px", cursorcolor: "#222", cursorborder: "0px solid #fff" });
+        }
+        function outalertbox_fn(){
+            var alertboxw = $(window).width();
+            if (alertboxw > 1200) { alertboxw = 1200; }
+            var $form = $(".alertboxtwo");
+            //form状态样式
+            //".alertboxnoe"第一次进入跳窗状态
+            //".alertboxtwo"点及不再提醒我状态
+            $.colorbox({
+                //iframe: true,
+                inline: true,
+                href: $form,
+                width: alertboxw, //燈箱中間區塊的寬度
+            });
+        }   
+    
+</script>
+
+</html>

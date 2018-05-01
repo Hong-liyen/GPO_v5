@@ -1,0 +1,453 @@
+@import mixin
+@font-face
+    font-family: COURGETTE-REGULAR
+    src: url(COURGETTE-REGULAR.TTF)
+
+@font-face
+    font-family: ANTON-REGULAR
+    src: url(ANTON-REGULAR.TTF)
+
+@font-face
+    font-family: erasbolditc
+    src: url(erasbolditc.TTF)
+
+html,body
+    color: #241e1c
+    height: 100vh
+    margin: 0
+    padding: 0
+
+html,body,h1, h2, h3, h4, h5, h6
+    font-family: "Microsoft YaHei"
+
+h1, h2, h3, h4, h5, h6
+    font-weight: 700
+ 
+h3 
+    font-size: 2.8em
+    color: $colorBrown
+    margin-top: 0
+    +breakpoint(pc)
+        font-size: 2.5em
+    +breakpoint(pad)
+        font-size: 2.2em
+    +breakpoint(mobile)
+        font-size: 1.8em
+
+button
+    border: none
+    outline: none
+    box-sizing: border-box
+    transition: background 0.5s
+    &:hover
+        transition: background 0.5s
+
+.wrap
+    width: $width
+    margin: 0 auto
+
+.subTitle
+    margin: 0 auto
+    width: 70%
+    text-align: center
+    font-size: 1em
+    background-color: $colorBrown
+    color: #fff
+    padding: 0.8em
+    letter-spacing: 2px
+    +breakpoint(mobile)
+        font-size: 0.8em 
+                    
+
+.navbar
+    background-color: rgba(#040227,.7)
+    +breakpoint(mobile)
+        background-color: #040227
+.navbar-nav
+    +breakpoint(pad)
+        margin-top: 0px
+
+.navbar-default
+    border-color: transparent
+
+.navbar-default .navbar-nav>li>a
+    line-height: 45px
+    color: #fff
+    text-align: center
+    +breakpoint(pad)
+        line-height: 30px
+    &:hover,&:focus 
+        color: rgba(#fff,0.8)
+
+.navbar-nav>li>a
+    padding: 10px 20px
+    +breakpoint(pc)       
+        padding: 10px
+    +breakpoint(pad)       
+        padding: 10px 
+    
+.navbar-collapse
+    max-height: 100%
+
+.navbar-brand
+    padding: 5px
+    +breakpoint(pad)
+        width: 45%
+    img
+        width: 120px
+        margin: 0 1.2vw 
+        +breakpoint(pad)
+            width: 100px
+.navbar-toggle
+    margin-top: 15px
+    border: none!important
+    &:hover
+        background-color: rgba(0,0,0,0)!important
+    span.icon-bar
+        position: relative
+        -moz-transition: .3s
+        -webkit-transition: .3s
+        -ms-transition: .3s
+        transition: .3s
+.navbar-toggle:not(.collapsed)
+    span.icon-bar
+        &:nth-child(2)
+            top: 6px
+            -moz-transform: rotate(45deg)
+            -webkit-transform: rotate(45deg)
+            -ms-transform: rotate(45deg)
+            transform: rotate(45deg)
+        &:nth-child(3)
+            opacity: 0
+        &:nth-child(4)
+            top: -6px
+            -moz-transform: rotate(-45deg)
+            -webkit-transform: rotate(-45deg)
+            -ms-transform: rotate(-45deg)
+            transform: rotate(-45deg)
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
+    background: rgba(255,255,255,.2)
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus
+    background-color: transparent
+    color: #fff
+
+.navbar-color,.custom-collapse
+    background-color: #040227
+    transition: background 1.2s
+
+.dropdown-menu
+    color: #040227
+    background-color: rgba(255,255,255,1)
+    border: 1px solid rgba(#040227,.7)
+    border-top: 3px solid rgba(#040227,.7)
+    box-shadow: 0 0 5px rgba(0,0,0,.05)
+    +breakpoint(pad)
+        width: 100%
+        border: none
+    li 
+        padding: 10px 5px
+        +breakpoint(pad)
+            background-color: rgba(255,255,255,.8)
+            color: #444
+            width: 100%
+
+
+.dropdown:hover > .dropdown-menu
+    background-color: rgba(255,255,255,1)
+    display: block
+   
+.dropdown-menu>li>a
+    text-align: center
+
+.dropdown-menu>li>a:hover
+    transition: all 0.5s
+    background-color: transparent
+    color: $colorOrange
+
+.navbar-nav .open .dropdown-menu
+    position: static
+    float: none
+    width: auto
+    margin-top: 0
+    background-color: transparent
+    border: 0
+    box-shadow: none
+
+section:nth-child(odd) a.scroll
+    color: #887267
+    span.arrow
+        border-left: 4px solid #887267
+        border-bottom: 4px solid #887267
+
+@-webkit-keyframes mymove 
+    from 
+        top: 0px
+    to 
+        top: 200px
+
+@keyframes mymove 
+    from 
+        top: 0px
+    to 
+        top: 200px
+
+// section
+section
+    position: relative
+    padding: 6em 0
+    text-align: center
+    +size(100%,100vh)    
+    +breakpoint(pc)
+        padding: 5em 0
+    +breakpoint(pad)
+        padding: 5.8em 0
+        height: auto
+    +breakpoint(mobile)
+        padding: 5.5em 0 6em
+        height: auto
+    &:nth-child(even) a.scroll
+        color: #fff
+    a.scroll
+        position: absolute
+        bottom: 50px
+        left: 50%
+        z-index: 2
+        display: inline-block
+        -webkit-transform: translate(-50%, -50%)
+        transform: translate(-50%, -50%)
+        letter-spacing: .1em
+        text-decoration: none
+        transition: opacity .3s
+        &:hover
+            opacity: .5
+        
+// scrooll
+span.arrow
+    -webkit-transition: all 600ms cubic-bezier(.17,.67,.83,.67)
+    transition: all 600ms cubic-bezier(.17,.67,.83,.67)
+    animation: 3s ease-out 1s slidein
+    position: absolute
+    top: 20px
+    left: 50%
+    border-left: 4px solid #fff
+    border-bottom: 4px solid #fff
+    border-radius: 4px
+    margin-left: -15px
+    -webkit-transform: rotate(-45deg)
+    transform: rotate(-45deg)
+    box-sizing: border-box
+    +size(30px)
+    
+.visual
+    color: #fff
+    padding: 1em
+    position: relative
+    overflow: hidden
+    +breakpoint(pad)
+        height: 100vh
+    +breakpoint(mobile)
+        height: 100vh    
+    h1,p,span.play 
+        position: absolute
+        z-index: 2
+        text-align: center
+
+    h1
+        width: 100%
+        font-family: COURGETTE-REGULAR
+        font-size: 6em
+        +position(50%,0)
+        +breakpoint(pc)
+            font-size: 5em
+        +breakpoint(pad)
+            font-size: 4em
+        +breakpoint(mobile)
+            font-size: 3em        
+    p 
+        width: 100%
+        font-size: 1.8em
+        letter-spacing: 3px
+        +position(70%,0)
+        +breakpoint(mobile)
+            top: 62%
+    
+
+#sportVisual,#videoVisual,#electronicVisual,#lotteryVisual,#cardgame
+    .textBox
+        position: absolute
+        transform: translate(-50%, -50%) 
+        width: 100%
+        +position(50%)
+        .text
+            display: inline-block
+            top: 50%
+            font-family: COURGETTE-REGULAR
+            font-size: 6em
+            +breakpoint(pc)
+                font-size: 5.5em
+            +breakpoint(pad)
+                display: block            
+                font-size: 4.5em
+            +breakpoint(mobile)
+                font-size: 3em
+        span
+            font-weight: 300
+            font-size: 4em
+            padding: 0 1vw
+            line-height: 1.2            
+            +breakpoint(pad)
+                display: block
+                line-height: 30px
+            +breakpoint(mobile)
+                font-size: 3em
+    p
+        left: 0% 
+        +breakpoint(pad)
+            top: 80%
+        +breakpoint(mobile)
+            top: 80%
+            
+
+#cultureVisual,#mobileVisual,#newsVisual,#porductVisual
+    overflow: hidden
+    h1,p 
+        display: block
+    h1
+        width: 100%
+        +position(35%,0)
+        &:nth-child(2)
+            top: 50%
+            +breakpoint(mobile)
+                top: 45%     
+    p 
+        width: 100%
+        +breakpoint(mobile)
+            font-size: 1.6em
+
+#sportPage01,#electronicPage01
+    height: 100vh
+    position: relative
+    .sportbox01,.electronicbox01
+        color: #fff
+        position: absolute
+        transform: translate(-50%,-50%)
+        padding: 1em
+        top: 50%
+        left: 50%
+        +size(50%,40%)            
+        +breakpoint(pc)
+            +size(80%,60%)
+        h1,p
+            position: absolute
+            transform: translate(-50%,-50%)            
+            left: 50%
+            width: 100%
+        h1 
+            top: 25%
+            font-size: 2.8em
+            +breakpoint(pc)
+                font-size: 2.6em
+            +breakpoint(pad)
+                font-size: 2.4em
+        p 
+            top: 50%
+            letter-spacing: 1px
+            &:nth-of-type(2)
+                top: 60%
+            font-size: 1.4em
+            +breakpoint(pad)
+                font-size: 1.4em
+
+.col-md-offset-6
+    height: 100%
+    +breakpoint(pc)
+        width: 100%
+        margin-left: 0
+// footer 
+footer 
+    background-color: #eee
+    padding: 20px 15px
+    overflow: hidden
+    +breakpoint(pc)
+        padding: 10px
+    .QQ,.email 
+        display: inline-block
+        color: #999
+        +breakpoint(mobile)
+            display: block
+            margin-top: 1.5vh
+            text-align: left
+            float: left
+            width: 50%
+            p
+                text-align: left
+    .QQ
+        +breakpoint(mobile)
+            width: 40%
+    .email
+        +breakpoint(mobile)
+            width: 60%
+        .icon-mail
+            +breakpoint(mobile)
+                top: -14px
+                position: relative
+                &:before
+                    padding-left: 0
+    .icon-qq-icon:before,.icon-mail:before
+        padding-left: 1.2em
+        font-size: 1.5em
+        line-height: 15px
+    .text-right
+        margin-top: 0!important
+    .col-lg-6
+        margin-top: 1vh
+        float: left
+        padding: 0
+        margin-top: 10px
+        color: #666
+        +breakpoint(pc)
+            text-align: center
+            margin: 1.6vh 0
+            float: none
+        +breakpoint(mobile)
+            line-height: 1.5
+        p
+            font-size: 14px
+            display: inline-block
+            span
+                +breakpoint(mobile)
+                    display: block
+        &:nth-child(2)
+            +breakpoint(mobile)
+                padding: 0px 35px
+                text-align: center
+
+
+.toTop span 
+    position: fixed
+    bottom: 66px
+    right: 25px
+    font-size: 50px
+    line-height: 50px    
+    color: #fff
+    text-align: center
+    font-weight: bolder
+    z-index: 999
+    background-color: rgba(123, 123, 123, 1)
+    border-radius: 50%
+    +size(50px)
+    transition: all 0.5s
+    &:hover
+        transition: all 0.5s
+        opacity: 0.9
+    
+    p
+        border-radius: 50%
+        text-align: center
+        +size(50px)
+        &::before
+            position: relative
+            line-heiht: 50px  
+            top: -5px

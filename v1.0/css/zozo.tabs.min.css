@@ -1,0 +1,760 @@
+/**************************************************************************
+*	@name		    Zozo UI Tabs
+*	@version	    6.5
+*   @Licenses: 	    http://codecanyon.net/licenses/
+*	@copyright      Copyright (c) 2013 Zozo UI
+***************************************************************************/
+
+/*==========================================================================
+    My set
+========================================================================== */
+/*container*/
+.tab-container:before, .tab-container:after,.tab-content:before, .tab-content:after {
+	content: "";
+	display: table;
+	line-height: 0;
+}
+.tab-container:after, .tab-content:after {
+	clear: both;
+}
+.tab-container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/* #supplement number*/
+.z-tabs .z-link .title-num {
+	position: relative;
+	display: inline-block;
+}
+/*#supplement underlined style*/
+.z-tabs.underlined ul.z-tabs-desktop li a .title-num, .z-tabs.underlined.mobile.m-red ul.z-tabs-desktop li a .title-num, .z-tabs.underlined.mobile.hover.m-red ul.z-tabs-desktop li a .title-num{
+	background-color: #717171;
+}
+/*#supplement underlined style mobile*/
+.z-tabs.underlined.mobile.m-red ul.z-tabs-desktop li:hover a .title-num, .z-tabs.underlined.mobile.m-red ul.z-tabs-desktop li.z-active a .title-num{
+	background-color:#d8261d;
+}
+.z-tabs.underlined.mobile.m-red ul.z-tabs-desktop li.z-active a, .z-tabs.mobile > ul.z-tabs-mobile > li > a > span.z-arrow, .z-tabs .z-link span.z-title  {
+	color: #d8261d;
+}
+.z-tabs.underlined.mobile > ul.z-tabs-nav > li > a {
+	border-color: #ddd;
+	background: #f2f2f2;
+}
+.z-tabs .z-link span {
+	padding: 0;
+	margin: 0;
+}
+
+/*#supplement underlined style content*/
+.z-tabs.underlined.vertical > .z-container > .z-content > .z-content-inner {
+	padding: 0 15px 0 30px;
+}
+
+
+/*==========================================================================
+    Global Reset
+========================================================================== */
+
+/* cross browser compatibility html5 tags */
+article, aside, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+/*reset box-sizing*/
+.z-tabs, .z-tabs > ul, .z-tabs > ul > li, .z-tabs > ul > li > a, .z-tabs > .z-container, .z-tabs > .z-container > .z-content, .z-tabs > .z-container > .z-content > .z-content-inner {
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+.z-tabs, .z-tabs:before, .z-tabs:after {
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+/* common reset*/
+.z-tabs, .z-tabs > ul, .z-tabs > ul > li, .z-tabs > ul > li > a {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: block;
+	outline: none;
+	text-decoration: none;
+	list-style: none;
+	list-style-type: none;
+}
+/*clear floats after each content*/
+.z-tabs > .z-container > .z-content::after, .z-tabs > .z-container > .z-content > .z-content-inner::after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/*clear floats after each content For IE 6/7 */
+.z-tabs > .z-container > .z-content, .z-tabs > .z-container > .z-content > .z-content-inner {
+	zoom: 1;
+}
+/*==========================================================================
+    Core (structure)
+========================================================================== */
+
+.z-tabs {
+	clear: both;
+	color: #717171;
+	font: 1em/1.6em "Microsoft YaHei", "敺株蔓��暺�", "PingFangSC-Regular", Helvetica, Arial, sans-serif;
+}
+.z-tabs > ul > li > a {
+	color: #717171;
+	line-height: 18px;
+	font-weight: inherit;
+	/*font-size: 16px;*/
+	/*padding: 13px 24px;*/
+	padding: 13px 15px;
+	font-size: 15px;
+	letter-spacing: 1px;
+	
+	background: #fff;
+	cursor: pointer;
+}
+.z-tabs > ul > li.z-active > a {
+	cursor: default;
+}
+.z-tabs > ul, .z-tabs > ul > li > a, .z-tabs > .z-container {
+	border-color: #EEEEEE;
+	border-style: solid;
+}
+.z-tabs > .z-container {
+	padding: 0;
+	margin: 0;
+	border-width: 1px;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+}
+.z-tabs > .z-container > .z-content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 0;
+	z-index: 7;
+	display: none;
+}
+.z-tabs > .z-container > .z-content.z-active {
+	z-index: 8;
+}
+.z-tabs > .z-container > .z-content > .z-content-inner {
+	/*padding: 18px 24px;*/
+	padding: 18px 15px;
+	height: auto;
+}
+/*==========================================================================
+      Horizontal Structure
+========================================================================== */
+
+.z-tabs.horizontal > ul > li {
+	float: left;
+}
+.z-tabs.horizontal > ul > li.z-active {
+	background: none;
+	z-index: 1;
+}
+.z-tabs.horizontal > ul > li > a {
+	margin-right: -1px;
+	/* padding: 13px 24px;*/
+	padding: 13px 15px;
+	min-height: 1px;
+}
+.z-tabs.top-compact > ul > li > a, .z-tabs.bottom-compact > ul > li > a {
+	padding-left: 0;
+	padding-right: 0;
+}
+/*top*/
+.z-tabs.horizontal.top > ul > li.z-active {
+	top: 2px;
+	margin-top: -2px;
+	padding-bottom: 2px;
+}
+.z-tabs.horizontal.top > ul > li > a {
+	top: 1px;
+	border-width: 1px 1px 0 1px;
+}
+.z-tabs.horizontal > ul > li.z-last > a, .z-tabs.horizontal > ul > li.z-last-col > a {
+	margin-right: 0 !important;
+}
+.z-tabs.horizontal > .z-container {
+	clear: both;
+	zoom: 1;
+}
+/*==========================================================================
+      Horizontal Positioning 
+========================================================================== */
+
+/*top-left is the defalt structure above in region*/
+
+/* top-center */
+.z-tabs.horizontal.top-center > ul.z-tabs-desktop {
+	clear: left;
+	float: left;
+	left: 50%;
+	text-align: center;
+}
+.z-tabs.horizontal.top-center > ul > li {
+	right: 50%;
+}
+/* top-right */
+.z-tabs.horizontal.top-right > ul {
+	float: right;
+	margin: 0 -1px 0 0;
+}
+.z-tabs.horizontal.top-right > ul > li.z-last {
+	margin-right: 1px;
+}
+.ie7 body .z-tabs.horizontal.top-right > ul > li.z-last {
+	margin-right: -1px;
+}
+.ie7 body .z-tabs.horizontal > .z-container {
+	clear: none;
+	width: 100%;
+}
+/**/
+.z-tabs.horizontal.responsive > ul > li > a, .z-tabs.horizontal.top-compact > ul > li > a, .z-tabs.horizontal.bottom-compact > ul > li > a, .z-tabs.horizontal.top-center > ul > li > a, .z-tabs.horizontal.bottom-center > ul > li > a {
+	text-align: center;
+}
+/*==========================================================================
+     Vertical Structure 
+========================================================================== */
+
+.z-tabs.vertical > ul {
+	float: left;
+	border-width: 1px 0 1px 1px;
+	width: 14.9%;
+}
+.z-tabs.vertical > ul > li > a {
+	border-width: 0 0 1px 0;
+}
+.z-tabs.vertical > ul > li.z-last > a {
+	border-bottom-width: 0;
+}
+.z-tabs.vertical > ul > li.z-active > a {
+	border-right-width: 0;
+	z-index: 10;
+}
+.z-tabs.vertical > ul > li.z-active.z-first > a {
+	border-bottom-width: 1px;
+}
+/*==========================================================================
+     Vertical Positioning
+========================================================================== */
+
+/*top-left*/
+.z-tabs.vertical.top-left > ul {
+	margin-left: 0;
+	margin-right: -1px;
+}
+.z-tabs.vertical.top-right > ul {
+	margin-right: 0;
+	margin-left: -1px;
+}
+.ie7 body .z-tabs.vertical.top-left > ul {
+	margin-right: 0;
+}
+.ie7 body .z-tabs.vertical.top-right > ul {
+	margin-left: 0;
+}
+.ie7 body .z-tabs.vertical.top-left > ul > li, .ie7 body .z-tabs.vertical.top-left > ul > li > .z-link, .ie7 body .z-tabs.vertical.top-left > ul {
+	z-index: 10 !important;
+}
+.ie7 body .z-tabs.vertical.top-left > ul > li.z-active > a {
+	border-right: 1px solid #fff !important;
+}
+/* ==========================================================================
+    clean - theme 
+========================================================================== */  
+.z-tabs.red > ul, .z-tabs.red > ul > li > a, .z-tabs.red > .z-container {
+	border-color: #ddd;
+	border-style: solid;
+}
+.z-tabs.red > ul > li > a {
+	background: #fafafa;
+	color: #717171;
+}
+.z-tabs.red > ul > li > a:hover {
+	background-color: #fff;
+	color: #717171;
+}
+.z-tabs.red > ul > li.z-active > a {
+	background-color: #ec9f00;
+	color: #fff;
+	filter: none;
+}
+/*==========================================================================
+    Underlined Themes
+========================================================================== */
+
+.z-tabs.underlined > .z-container, .z-tabs.underlined > ul.z-tabs-nav, .z-tabs.underlined > ul.z-tabs-nav > li > a {
+	border-color: #ddd;
+}
+.z-tabs.underlined.red > ul.z-tabs-nav > li.z-active > a, .z-tabs.underlined.red > ul.z-tabs-nav > li > a:hover {
+	border-color: #d8261d;
+}
+.z-tabs.underlined.red ul.z-tabs-nav li.z-active a .title-num, .z-tabs.underlined.red ul.z-tabs-nav li a:hover .title-num {
+	background-color: #d8261d;
+}
+.z-tabs.underlined.red > ul.z-tabs-nav > li.z-active > a, .z-tabs.underlined.red > ul.z-tabs-nav > li > a:hover {
+	color: #d8261d;
+}
+/*==========================================================================
+    Clean structure
+========================================================================== */
+
+.z-tabs.clean.horizontal > ul > li.z-active {
+	top: 0;
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.z-tabs.clean > ul > li.z-active > a {
+	font-weight: normal;
+}
+.z-tabs.clean.white.z-bordered > ul > li.z-active > a {
+	color: inherit;
+}
+.z-tabs.clean > .z-container {
+	border-width: 0;
+	background: none;
+}
+.z-tabs.clean.horizontal > .z-container > .z-content > .z-content-inner {
+	/*padding: 24px 15px;*/
+	padding: 24px 0;
+}
+/*top*/
+.z-tabs.clean.horizontal.top > ul > li > a {
+	border-bottom-width: 1px;
+}
+/*bottom*/
+.z-tabs.clean.horizontal.bottom > ul > li > a {
+	border-top-width: 1px;
+}
+
+/*==========================================================================
+    Clean - Rounded
+========================================================================== */
+
+.z-tabs.clean.z-rounded.top > ul > li.z-first > a, .z-tabs.clean.z-rounded.bottom > ul > li.z-first > a {
+	-webkit-border-radius: 5px 0 0 5px;
+	-moz-border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 5px;
+}
+.z-tabs.clean.top.z-rounded > ul > li.z-last > a, .z-tabs.clean.bottom.z-rounded > ul > li.z-last > a {
+	-webkit-border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
+}
+.z-tabs.clean.horizontal.top.z-rounded > ul > li.z-last-row.z-first-col > a {
+	-webkit-border-radius: 0 0 0 5px;
+	-moz-border-radius: 0 0 0 5px;
+	border-radius: 0 0 0 5px;
+}
+.z-tabs.clean.responsive.horizontal.top.z-rounded > ul > li.z-last-row.z-last-col > a {
+	-webkit-border-radius: 0 0 5px 0;
+	-moz-border-radius: 0 0 5px 0;
+	border-radius: 0 0 5px 0;
+}
+/*==========================================================================
+    Clean - vertical
+========================================================================== */
+
+
+/*vertical*/
+.z-tabs.clean.vertical > ul.z-tabs-desktop {
+	border-width: 1px 1px 1px 1px;
+	margin-left: 15px;
+}
+.z-tabs.clean.vertical > ul > li.z-active {
+	z-index: 7;
+}
+.z-tabs.clean.vertical > .z-container > .z-content > .z-content-inner {
+	/*padding: 0 2em;*/
+	padding: 0 15px 0 2em;
+}
+/*vertical rounded*/
+.z-tabs.clean.vertical.z-rounded > ul.z-tabs-desktop {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.z-tabs.clean.vertical.mobile.z-rounded > ul.z-tabs-desktop {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.z-tabs.clean.vertical.z-rounded > ul.z-tabs-desktop > li.z-first, .z-tabs.clean.vertical.z-rounded > ul.z-tabs-desktop > li.z-first > a {
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+.z-tabs.clean.vertical.z-rounded > ul.z-tabs-desktop > li.z-last, .z-tabs.clean.vertical.z-rounded > ul.z-tabs-desktop > li.z-last > a {
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+}
+/*==========================================================================
+    Clean - Responsive
+========================================================================== */
+
+.z-tabs.horizontal.clean.responsive.top > ul > li > a {
+	border-bottom-width: 0;
+}
+.z-tabs.clean.responsive.horizontal.bottom > ul > li > a {
+	border-top-width: 0;
+}
+.z-tabs.clean.responsive.horizontal.bottom > ul > li.z-first-row > a {
+	border-top-width: 1px;
+}
+.z-tabs.clean.responsive.horizontal.bottom > ul > li.z-first-row > a, .z-tabs.clean.responsive.horizontal.top > ul > li.z-last-row > a, .z-tabs.clean.responsive.horizontal.bottom > ul > li.z-last-row > a {
+	border-bottom-width: 1px;
+}
+.z-tabs.horizontal.clean.responsive.z-rounded.top > ul > li.z-first > a {
+	-webkit-border-bottom-left-radius: 0;
+	-moz-border-radius-bottomleft: 0;
+	border-bottom-left-radius: 0;
+}
+.z-tabs.clean.responsive.horizontal.z-rounded.top > ul > li.z-last > a {
+	-webkit-border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
+}
+/*#==========================================================================
+    Clean - mobile
+========================================================================== */
+.z-tabs.clean.red.mobile > ul > li.z-active > a {
+	background-color: #d8261d;
+}
+.z-tabs.clean.horizontal.mobile.top > ul > li, .z-tabs.clean.horizontal.mobile.bottom > ul > li {
+	border-bottom-width: 0;
+}
+/*==========================================================================
+    Underlined Structure
+========================================================================== */
+
+/* underlined reset*/
+.z-tabs.underlined, .z-tabs.underlined > ul, .z-tabs.underlined > ul > li, .z-tabs.underlined > ul > li.z-first, .z-tabs.underlined > ul > li.z-last, .z-tabs.underlined > ul > li.z-first.z-active, .z-tabs.underlined > ul > li.z-last.z-active, .z-tabs.underlined > ul > li.z-active, .z-tabs.underlined > ul > li:hover, .z-tabs.underlined > ul > li > a.z-link, .z-tabs.underlined > ul > li > a:hover, .z-tabs.underlined > .z-container {
+	border-width: 0;
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	background: none;
+	filter: none;
+}
+.z-tabs.underlined > ul > li {
+	top: 0;
+	padding: 0;
+}
+.z-tabs.underlined.horizontal > ul > li.z-active {
+	top: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+.z-tabs.underlined.horizontal > ul > li > a {
+	top: 0;
+	opacity: 0.80;
+	filter: none;
+	margin-left: 16px;
+}
+.z-tabs.underlined.horizontal.top-compact > ul.z-tabs-nav.z-tabs-desktop > li, .z-tabs.underlined.horizontal.top-compact > ul.z-tabs-nav.z-tabs-desktop > li.z-active, .z-tabs.underlined.horizontal.top-compact > ul.z-tabs-nav.z-tabs-desktop > li:hover, .z-tabs.underlined.horizontal.top-left > ul.z-tabs-nav > li.z-first > a, .z-tabs.underlined.horizontal.bottom-left > ul.z-tabs-nav > li.z-first > a {
+	margin-left: 0;
+}
+.z-tabs.underlined.horizontal.top-right > ul.z-tabs-nav > li.z-last > a, .z-tabs.underlined.horizontal.bottom-right > ul.z-tabs-nav > li.z-last > a {
+	margin-right: 0;
+}
+.z-tabs.underlined.horizontal > .z-container > .z-content > .z-content-inner {
+	padding: 1.4em 0;
+}
+.z-tabs.underlined.horizontal.top > ul > li > a:hover, .z-tabs.underlined.horizontal.top> ul > li.z-active > a {
+	font-weight: normal;
+	margin-bottom: 0;
+	border-width: 0 0 3px 0;
+	opacity: 1;
+}
+.z-tabs.underlined.horizontal.top > .z-container {
+	border-width: 1px 0 0 0;
+}
+/*underlined horizontal bottom*/
+.z-tabs.underlined.horizontal.bottom > .z-container {
+	border-width: 0 0 1px 0;
+}
+.z-tabs.underlined.horizontal.bottom > ul > li > a {
+	margin-top: 3px;
+}
+.z-tabs.underlined.horizontal.bottom > ul > li > a:hover, .z-tabs.underlined.horizontal.bottom > ul > li.z-active > a {
+	font-weight: normal;
+	margin-bottom: 0;
+	border-width: 3px 0 0 0;
+	margin-top: 0;
+}
+/*==========================================================================
+    Underlined Vertical
+========================================================================== */
+.z-tabs.underlined.vertical > ul {
+	border-width: 0;
+}
+/*.z-tabs.underlined.vertical > .z-container > .z-content > .z-content-inner {
+	padding: 0 2em;
+}*/
+.z-tabs.vertical.underlined > ul > li > a {
+	filter: none;
+	background: transparent;
+	margin: 0;
+	color: #717171;
+	margin-left: 3px;
+}
+.z-tabs.vertical.underlined.top-left > ul {
+	border-width: 0 1px 0 0;
+}
+.z-tabs.vertical.underlined.top-right > ul {
+	border-width: 0 0 0 1px;
+}
+.z-tabs.vertical.underlined > ul.z-tabs-nav > li.z-active > a, .z-tabs.vertical.underlined > ul.z-tabs-nav > li > a:hover {
+	font-weight: normal;
+	margin-bottom: 0;
+	border-width: 0;/*background: #fafafa;*/
+}
+.z-tabs.vertical.underlined.top-left > ul.z-tabs-nav > li.z-active > a, .z-tabs.vertical.underlined.top-left > ul.z-tabs-nav > li > a:hover {
+	border-width: 0 3px 0 0;
+}
+.z-tabs.vertical.underlined.top-right > ul.z-tabs-nav > li.z-active > a, .z-tabs.vertical.underlined.top-right > ul.z-tabs-nav > li > a:hover {
+	border-width: 0 0 0 3px;
+	margin-left: 0;
+}
+.ie7 body .z-tabs.underlined.vertical.top-right > ul.z-tabs-nav > li.z-active {
+	border-right-width: 0 !important;
+	border-left: 3px solid #444 !important;
+	left: -1px;
+}
+.ie7 body .z-tabs.underlined.vertical.top-left > ul.z-tabs-nav > li.z-active {
+	border-right: 3px solid #444 !important;
+}
+/*==========================================================================
+    Underlined Sizes
+========================================================================== */
+
+
+/*underlined sizes*/
+.z-tabs.underlined.horizontal.mini > ul.z-tabs-nav > li > a.z-link {
+	padding: 6px 6px;
+}
+.z-tabs.underlined.horizontal.small > ul.z-tabs-nav > li > a.z-link {
+	padding: 8px 8px;
+}
+.z-tabs.underlined.horizontal.medium > ul.z-tabs-nav > li > a.z-link {
+	padding: 10px 10px;
+}
+.z-tabs.underlined.horizontal.large > ul.z-tabs-nav > li > a.z-link {
+	padding: 10px 12px;
+}
+.z-tabs.underlined.horizontal.xlarge > ul.z-tabs-nav > li > a.z-link {
+	padding: 12px 14px;
+}
+.z-tabs.underlined.horizontal.xxlarge > ul.z-tabs-nav > li > a.z-link {
+	padding: 14px 16px;
+}
+.z-tabs.underlined.horizontal.mini > ul.z-tabs-nav > li:hover, .z-tabs.underlined.horizontal.mini > ul.z-tabs-nav > li.z-active, .z-tabs.underlined.horizontal.small > ul.z-tabs-nav > li:hover, .z-tabs.underlined.horizontal.small > ul.z-tabs-nav > li.z-active {
+	border-bottom-width: 2px;
+}
+/*==========================================================================
+    underlined-Mobile
+========================================================================== */
+
+.z-tabs.underlined.mobile > ul.z-tabs-mobile, .z-tabs.underlined.mobile > ul.z-tabs-desktop {
+	border-width: 0;
+	margin-top: 0;
+}
+.z-tabs.mobile.underlined> .z-container > .z-content > .z-content-inner {
+	padding: 0 15px;/*padding: 0;*/
+}
+.z-tabs.mobile.underlined > .z-container {
+	border-width: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.z-tabs.underlined.mobile > ul.z-tabs-mobile.z-state-closed {
+	border-width: 0;
+}
+.z-tabs.underlined.mobile.vertical > .z-container > .z-content > .z-content-inner {
+	padding: 2em;
+}
+/* mobile themes*/
+.z-tabs.underlined.mobile > ul.z-tabs-nav > li > a {
+	text-transform: uppercase;
+}
+.z-tabs.underlined.mobile > ul.z-tabs-desktop > li > a {
+	-moz-transition: background-color 200ms ease-out, color 200ms ease-out, text-shadow 200ms ease-out;
+	-o-transition: background-color 200ms ease-out, color 200ms ease-out, text-shadow 200ms ease-out;
+	-webkit-transition: background-color 200ms ease-out, color 200ms ease-out, text-shadow 200ms ease-out;
+	-ms-transition: background-color 200ms ease-out, color 200ms ease-out, text-shadow 200ms ease-out;
+	transition: background-color 200ms ease-out, color 200ms ease-out, text-shadow 200ms ease-out;
+}
+.z-tabs.underlined.mobile > ul.z-tabs-nav > li > a {
+/*	border-color: #E6E6E6;
+	background: #fff;*/
+	border-width: 1px 0 1px 0 !important;
+	opacity: 1;
+	border-style: dotted;
+}
+.z-tabs.underlined.mobile.hover > ul.z-tabs-desktop > li.z-active > a, .z-tabs.underlined.mobile.hover > ul.z-tabs-desktop > li:hover > a {
+	background: #fff;
+	color: #d8261d;
+}
+.z-tabs.underlined.mobile.m-red > ul.z-tabs-desktop > li.z-active > a, .z-tabs.underlined.mobile.hover.m-red > ul.z-tabs-desktop > li:hover > a {
+	color: #d8261d;
+}
+
+
+
+/* ==========================================================================
+    Zozo Tabs Mobile Menu
+========================================================================== */
+
+/*reset*/
+.z-tabs.mobile > ul.z-tabs-nav, .z-tabs.mobile > ul.z-tabs-nav > li, .z-tabs.mobile > ul.z-tabs-nav > li.z-active, .z-tabs.mobile > .z-container, .z-tabs.mobile > .z-container > .z-content {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+.z-tabs.mobile {
+	position: relative;
+}
+/*horizontal */
+.z-tabs.mobile > ul.z-tabs-nav,  .z-tabs.mobile > ul.z-tabs-nav.z-tabs-mobile,  .z-tabs.mobile > ul.z-tabs-nav.z-tabs-mobile > li,  .z-tabs.mobile > .z-container {
+	width: 100%;
+	float: none;
+	display: block;
+}
+.z-tabs.mobile > ul.z-tabs-nav {
+	border-width: 1px 1px 1px 1px;
+}
+.z-tabs.mobile > ul.z-tabs-nav > li > .z-link {
+	margin: 0 !important;
+}
+.z-tabs.mobile > ul.z-tabs-desktop {
+	/* comment position and top to change to relative positioning */
+	position: absolute;
+	top: inherit;
+	margin-top: 8px;
+	left: 0;
+	z-index: 1000;
+	width: 100%;
+	box-shadow: 0 2px 1px rgba(51, 51, 51, 0.1);
+}
+.z-tabs.mobile > ul > li {
+	overflow: visible;
+}
+.z-tabs.mobile > ul.z-tabs-nav > li > a {
+	top: 0;
+}
+.z-tabs.mobile > ul > li.z-active > a {
+	/*font-weight: bold;*/
+	font-size: 1em;
+}
+.z-tabs.mobile.top > ul.z-tabs-desktop > li > a,  .z-tabs.mobile.bottom > ul.z-tabs-desktop > li > a {
+	border-width: 1px 0px 0 0px;
+}
+.z-tabs.mobile > ul.z-tabs-nav > li.z-first > a {
+	border-width: 0;
+}
+
+.z-tabs.mobile.z-shadows > ul.z-tabs-mobile {
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+	-moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+	box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.9) inset;
+}
+.z-tabs.mobile > ul.z-tabs-desktop > li {
+	float: none;
+	display: block;
+}
+.z-tabs.mobile > ul.z-tabs-desktop.z-hide-menu {
+	opacity: 0;
+	height: 0;
+	visibility: hidden;
+}
+.z-tabs.mobile.top > .z-container {
+	margin-top: 8px;
+}
+.z-tabs.mobile.bottom > .z-container {
+	margin-bottom: 8px;
+}
+.z-tabs.mobile > .z-container,  .z-tabs.mobile > .z-container > .z-content.z-active {
+	overflow: visible;
+}
+.z-tabs.mobile > .z-container.z-animating,  .z-tabs.mobile > .z-container.z-animating > .z-content.z-active {
+	overflow: hidden;
+}
+
+.z-tabs.mobile > ul.z-tabs-mobile.z-state-closed > li > a > span.z-arrow {
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	transform: rotate(0deg);
+	opacity: 1;
+}
+.z-tabs.mobile > ul.z-tabs-mobile > li > a > span.z-arrow {
+	position: absolute;
+	top: 50%;
+
+	/*background-position: -1470px -3px;*/
+	width: 30px;
+	height: 30px;
+/*	margin-top: -25px;
+	margin-left: -0.75em;*/
+	margin-top: -10px;
+	display: inline-block;
+	right: 1.125em;
+	/*background-position: -1470px -60px;*/
+}
+.z-tabs.mobile > ul.z-tabs-mobile > li > a > span.z-arrow:before {
+	content: '\f107';
+	font: normal normal 20px/30px "FontAwesome", sans-serif;
+}
+
+/*mobile horizontal style*/
+.z-tabs.mobile > ul.z-tabs-nav > li.z-active {
+	margin: 0;
+	padding: 0;
+	top: 0;
+	bottom: 0;
+}
+.z-tabs.mobile > ul.z-tabs-nav > li.z-active > a {
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	width: auto;
+}
+.z-tabs.mobile > ul.z-tabs-nav > li {
+	border-width: 0px;
+}
+.z-tabs.mobile > ul.z-tabs-nav > li > a {
+	text-align: left;
+}
+.z-tabs.mobile > ul.z-tabs-desktop > li.z-last {
+	border-bottom-width: 0;
+}
+
+
+/*==========================================================================
+    Mobile Fixes
+========================================================================== */
+/* Prevent any object from being highlighted upon touch event*/
+.z-tabs .z-tabs *, .z-tabs ul, .z-tabs ul li, .z-tabs ul li a, .z-tabs .z-container .z-content {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	outline: none;
+}

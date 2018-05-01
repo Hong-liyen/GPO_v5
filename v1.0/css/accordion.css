@@ -1,0 +1,236 @@
+/* ==========================================================================
+    accordion menu - QA -list
+========================================================================== */  
+/* reset */
+.accordion, .accordion-section, .accordion-section-title, .accordion-section-content {
+	width: 100%;
+}
+.accordion, .accordion * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.accordion {
+	text-align: left;
+	font: normal normal 1em/1.6em "Microsoft YaHei", "PingFangSC-Regular", Helvetica, Arial, sans-serif;
+}
+.accordion-section {
+	clear: both;
+	box-shadow: 0 1px 5px rgba(0,0,0,.15);
+	margin-bottom: .8em;
+}
+/* title Normal*/
+a.accordion-section-title, a.accordion-section-title:not(:hover) {
+	height: 100%;
+	display: table;
+	/*icon position*/
+	padding: 1.6em 1em 1.6em 40px;
+	/* Type */
+	background-color: #f2f2f2;
+	color: #717171;
+	text-align: inherit;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	border-radius: 5px;
+}
+a.accordion-section-title {
+	color: #717171;
+	padding: 1.6em 1em 1.6em 40px;
+}
+/*----- title click active -----*/
+a.accordion-section-title.active {
+	text-decoration: none;
+	color: #D8261D;
+	padding-bottom: 8px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+/* title hover effect */
+a.accordion-section-title:hover {
+	text-decoration: none;
+	color: #D8261D;
+	background-color: #fff;
+}
+a.accordion-section-title.active, a.accordion-section-title.active + .accordion-section-content {
+	background-color: #fff;
+}
+/* title QA icon */
+a.accordion-section-title span, .accordion-section-content span {
+	width: 20px;
+	height: 20px;
+	display: block;
+	vertical-align: middle;
+	position: relative;
+	left: -10px;/*icon position*/
+	top: 2px;
+	float: left;
+	margin-left: -20px;/*icon width*/
+	pointer-events: none;
+}
+/* title icon hover */
+a.accordion-section-title.active span.question-1, a.accordion-section-title:hover span.question-1 {
+	background-position: 0px -30px;
+}
+/*-----  Icon- -----*/
+a.accordion-section-title .fa-chevron-down {
+	pointer-events: none;
+	font-size: 12px;
+	line-height: 12px;
+	width: 12px;
+	height: 12px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	vertical-align: middle;
+	margin-top: auto;
+	margin-bottom: auto;
+	display: table-cell;
+}
+.accordion-section-title.active .fa-chevron-down {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+/* Answer content */
+.accordion-section-content {
+	padding-right: 28px;
+	padding-left: 40px;/*icon position*/
+	padding-bottom: 16px;
+	padding-top: 8px;
+	display: none;
+	color: #717171;
+	text-align: inherit;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+/* Icon Image Sprite*/
+.question-1, .question-2, .answer-1, .answer-2 {
+	display: block;
+	text-indent: -9999px;
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/icon-qa.png);
+	-webkit-transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+	-moz-transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+	-ms-transition: all 0.3s ecubic-bezier(0.31, -0.105, 0.43, 1.59);
+	transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.question-1 {
+	background-position: 0px 0px;
+}
+.question-2 {
+	background-position: 0px -30px;
+}
+.answer-1 {
+	background-position: 0px -60px;
+}
+.answer-2 {
+	background-position: 0px -90px;
+}
+.accordion-section-content ul, .accordion-section-content ol {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* for oldIE - IE9 */
+@media \0screen\,screen\9 {
+a.accordion-section-title {
+	color: #717171;
+	display: block;
+}
+a.accordion-section-title .fa-chevron-down {
+	display: none;
+}
+}
+/* ==========================================================================
+    procedure-show / hide element
+========================================================================== */ 
+
+.label, .lanel * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+}
+.label {
+}
+.label-section {
+	clear: both;
+	display: table;
+}
+/* title Normal*/
+a.label-section-title, a.label-section-title:not(:hover) {
+	font-size: 20px;
+	line-height: 30px;
+	display: inline-block;
+	color: #ec9f00;
+	text-align: inherit;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+/*----- title click active -----*/
+a.label-section-title.active {
+	color: #D8261D;
+}
+/* title hover effect */
+a.label-section-title:hover {
+	color: #D8261D;
+}
+/*-----  Icon Normal -----*/
+a.label-section-title .fa-chevron-down {
+	color: #ec9f00;
+	margin-left: .8em;
+	pointer-events: none;
+	font-size: 12px;
+	line-height: 12px;
+	width: 12px;
+	height: 12px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	vertical-align: middle;
+}
+/*-----  Icon hover -----*/
+a.label-section-title:hover .fa-chevron-down {
+	color: #D8261D;
+}
+/*-----  Icon active -----*/
+.label-section-title.active .fa-chevron-down {
+	color: #D8261D;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+/* Answer content */
+.label-section-content {
+	display: none;
+	color: #717171;
+	text-align: left;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.label-section-content ul, .label-section-content ol {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* for oldIE - IE9 */
+@media \0screen\,screen\9 {
+a.label-section-title {
+	color: #717171;
+	display: block;
+}
+a.label-section-title .fa-chevron-down {
+	display: none;
+}
+}

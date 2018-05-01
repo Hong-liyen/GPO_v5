@@ -1,0 +1,1845 @@
+@import layout
+@import mixin
+@import 'add.scss'
+//outbox
+#alerthind
+    display: none
+.alertinfbox
+    cursor: pointer
+#alertbox,#alertbox1
+    padding: 0
+    color: #222222
+    span.redtxt
+        color: #ff0000
+    span.underline
+        text-decoration: underline
+    .title
+        font-size: 35px
+        line-height: 45px
+        padding-top: 20px
+        text-align: center
+        +breakpoint(pad)
+            font-size: 30px
+            line-height: 40px
+        +breakpoint(mobile)
+            font-size: 25px
+            line-height: 35px
+    .titleline
+        width: 45px
+        margin: 10px auto
+        border-bottom: 1px solid #222222
+    .time
+        color: #9f9f9f
+        text-align: center
+        //margin-bottom: 15px
+    .txt
+        width: 80%
+        margin: 15px auto
+        padding-bottom: 80px
+        color: #888888
+        .txtcenter
+            text-align: center
+        .inpagebtn
+            background: #ff6d00
+            padding: 10px
+            margin: 15px auto
+            text-align: center
+            color: #fff
+            cursor: pointer
+        table
+            margin: 0 auto
+            width: 100%
+            tr
+                &:nth-child(1) 
+                    background-color: #888888
+                    color: #fff
+                td
+                    border: 1px solid #888888
+                    text-align: center
+                    padding: 10px 5px
+                    line-height: 25px
+                .datembnone
+                    +breakpoint(pad)
+                        display: none
+        .txtleft
+            text-align: left
+    .txtmain
+        font-size: 16px
+        font-weight: 900
+        width: 80%
+        margin: 0 auto
+        margin-top: 10px
+    .alertbannerimg
+        width: 100%
+    .alertcontent
+        height: 70vh
+        +range-width-in( 0, 600px)
+            height: calc(70vh - 65px)
+    .btnline
+        position: fixed
+        text-align: center
+        width: 100%
+        bottom: 10vh
+        left: 0
+        z-index: 10
+        +range-width-in( 0, 600px)
+            bottom: 2vh
+            height: 25vh
+        .alertbtn
+            display: inline-block
+            min-width: 250px
+            line-height: 50px
+            font-size: 20px
+            height: 50px
+            color: #fff
+            border: 2px solid #fff
+            border-radius: 50px
+            margin: 5px 20px
+            cursor: pointer
+            transition: all 0.3s
+            +range-width-in( 0, 600px)
+            background: #000
+
+            &:hover
+                background: #ffffff
+                color: #000
+#alertbox1
+    .newsconttitlebox
+        width: 80%
+        margin: 0 auto
+        position: relative
+        .title
+            margin-top: 20px
+            text-align: left
+            line-height: 30px
+            max-width: 220px
+            height: 40px
+            background: #4b81c4
+            color: #fff
+            font-size: 18px
+            padding: 5px 25px
+            text-align: center
+            font-weight: 900
+            display: inline-block
+        .time
+            position: absolute
+            right: 0
+            bottom: 0
+        .title_active
+            background: #ff7e00!important
+.newsalert
+    .alertcontent
+        height: 85vh!important
+.alertboxtwo
+    .alertcontent
+        height: 70vh!important
+    .btnline
+        +range-width-in( 0, 600px)
+            height: 15vh!important
+#cboxContent
+    button
+        transition: background 0s
+        &:hover
+            transition: background 0s
+#colorbox
+    position: fixed!important
+    top: 5vh!important
+// Index
+.navbar
+    visibility: inherit!important
+#mainbanner
+    padding: 0
+    .topbanner
+        height: 100%
+        .topbanner-out
+            height: 100%
+            .slick-list
+                height: 100%
+            .slick-slide
+                width: 100%
+                height: 100%
+                img
+                    cursor: pointer
+                    height: 100vh
+                    width: auto
+                    text-align: center
+                    position: relative
+                    left: 50%
+                    transform: translate(-50%)
+                    -webkit-transform: translate(-50%)
+#mainVisual
+    +bg('mainVisual.png')
+    h1 
+        top: 40%
+    span.play
+        +position(56%,62%) 
+        cursor: pointer
+        +size(4.5vw)
+        +breakpoint(pc)
+            left: 65%
+        +breakpoint(pad)
+            +position(58%,72%)
+        +breakpoint(mobile)
+            +position(54%,76%)
+
+        img
+            width: 80px
+            +breakpoint(pc)
+                width: 80px
+            +breakpoint(pad)
+                width: 60px
+            +breakpoint(mobile)
+                width: 50px
+    .video-container
+        position: relative
+        padding-bottom: 56.25%
+        padding-top: 30px
+        height: 0
+        overflow: hidden
+        iframe,object,embed 
+            position: absolute
+            +position(0)
+            +size(100%)
+    .modal-header
+        border-bottom: 0
+    .modal-content
+        background-color: rgba(255,255,255,.8)  
+#Advantages
+    +breakpoint(bigpc)
+        padding-top: 2em 
+    background:  url(../images/commonBg/pokerBg.png) right 20vh / cover no-repeat #cfcfcf
+    +breakpoint(pad)
+        background-position: right 35vh               
+    +breakpoint(mobile)
+        background-position: right 35vh                 
+    img 
+        width: 55%
+        margin-top: 1.5vh
+        +breakpoint(pc)
+            width: 70%       
+        +breakpoint(pad)
+            width: 85px                
+        +breakpoint(mobile)
+            width: 48%
+    .row
+        margin-top: 2.6em       
+    .col-md-3
+        margin: 1.8vh 0
+        +breakpoint(pad)
+            margin: 0.5vh 0
+    h3,p,span
+        text-align: center
+    .title
+        h3
+            margin: 1em 0 1.5vw 0
+            color: $colorBrown
+            span
+                background-color: $colorBrown
+                font-size: 0.5em
+                color: #fff
+                padding: 5px 8px
+                margin: 0 1vw 
+    p 
+        font-size: 1em
+        margin: 0
+        +breakpoint(mobile)
+            font-size: 0.9em
+            
+    img 
+        margin-bottom: 2vh
+#b2b
+    +bg('sectionB2b.png')
+    padding-top: 7.5em
+    h3 
+        font-size: 2em
+        color: $colorOrange
+        margin-top: 1em
+    .container
+        position: relative
+        border: 2px solid  $colorOrange
+        border-top: 5px solid $colorOrange
+        background-color: rgba(0,0,0,.3)
+        color: #fff
+        padding: 3.5em 3em 2em
+        margin-top: 3em
+        +breakpoint(pc)
+            padding: 3em 2.5em
+            width: 100%
+        >img
+            position: absolute
+            -webkit-transform: translate(-50%, -50%)
+            transform: translate(-50%, -50%)
+            +position(0%,50%)            
+            +size(100px)
+        .b2bItem
+            li
+                list-style: none
+                padding: 0
+                margin: 1.8em 20px
+                +grid(5,5px)
+                +breakpoint(pc)
+                    width: 155px
+                +breakpoint(pad)
+                    +grid(5,5px)
+                    height: 200px
+                    
+                +breakpoint(mobile)
+                    width: 100%
+                    text-align: center
+                    margin: 5px 0
+                    height: auto
+                    
+                .icon
+                    vertical-align: middle
+                    border: 2px solid #fff
+                    border-radius: 50%
+                    text-align: center
+                    margin: 0 auto
+                    margin-bottom: 2.2vh
+                    line-height: 1.8
+                    +size(130px)
+                    +breakpoint(pc)
+                        +size(110px)
+                    +breakpoint(pad)
+                        +size(80px)
+                    +breakpoint(mobile)
+                        margin-bottom: 1.2vh
+                        +size(80px)
+                    h1 
+                        margin: 0
+                        margin-top: 0.5vw
+                        font-size: 4em
+                        +breakpoint(pc)
+                            font-size: 3em
+                        +breakpoint(pad)
+                            font-size: 2.5em
+                        +breakpoint(mobile)
+                            margin-top: 0.1vw
+                    span 
+                        font-size: 1.4em
+                        +breakpoint(pc)
+                            font-size: 1.2em
+                        +breakpoint(pad)
+                            font-size: 1em
+                        +breakpoint(mobile)
+                            font-size: 0.5em
+                p 
+                    margin: 0
+                    line-height: 1.8
+                    font-size: 1em
+                    
+                    +breakpoint(pad)
+                        font-size: 0.8em
+#bigData
+    background: url(../images/imageSide/bigdataSide.png) left center no-repeat,url(../images/geometry/indexCircle03.png) no-repeat 45vh 35vh #eee
+    padding-top: 0
+    text-align: center
+    +breakpoint(pc)
+        background: none 
+        background-color: #eee      
+    .bigDatabox
+        background: url(../images/geometry/indexCircle02.png) no-repeat 85vh 30vh,url(../images/geometry/indexcCircle01.png) no-repeat 70vh -10vh
+        padding: 4vw 0
+        +breakpoint(pc)
+            background: none
+        .bigDataItembox 
+            margin-top: 2.4vw
+        h3
+            color: $colorBrown
+            font-size: 3em
+            margin-top: 2.8vh
+            +breakpoint(pc)
+                font-size: 2.5em
+            +breakpoint(pad)
+                font-size: 2em
+        .bigDataItem 
+            display: inline-block
+            margin: 1em 0
+            +breakpoint(pad)
+                display: block
+            img
+                margin: 0 4vw 
+                margin-bottom: 1.2vw
+                width: 160px
+                +breakpoint(pc)
+                    width: 160px      
+                +breakpoint(pad)
+                    width: 140px                
+                +breakpoint(mobile)
+                    width: 100px
+        .safety 
+            display: block        
+#payment
+    +bg('sectionPayment.png')
+    color: #fff
+    h1
+        color: #ff6d00
+        margin: 2.5vw auto
+        width: 180px
+        font-size: 30px
+        padding-bottom: 0.5em
+        border-bottom: 3px solid #ff6d00
+        
+        +breakpoint(pc)
+            font-size: 28px
+            width: 180px            
+        +breakpoint(pad)
+            font-size: 24px
+            width: 160px                           
+        +breakpoint(mobile)
+            font-size: 22px
+            width: 140px
+    p 
+        margin: 0
+        line-height: 1.8
+        font-size: 1em
+        +breakpoint(pad)
+            font-size: 0.8em
+    .paybox
+        margin-top: 12em
+        +breakpoint(pc)
+            margin-top: 6em      
+        +breakpoint(pad)
+            margin-top: 2em               
+        +breakpoint(mobile)
+            margin-top: 1em
+        .paymentItem 
+            display: inline-block
+            margin: 1vw 2vw
+            vertical-align: top
+            +breakpoint(pc)
+                margin: 1vw 3vw
+                
+            img 
+                margin-bottom: 2.4vw
+                width: 55% 
+                +breakpoint(pc)
+                    width: 70%       
+                +breakpoint(pad)
+                    width: 85px                
+                +breakpoint(mobile)
+                    width: 40%         
+#playway
+    +bgSide('playwaySide.png')
+    background-position: left center
+    background-repeat: #eee
+    padding-top: 0
+    padding-bottom: 0
+    overflow: hidden
+    +breakpoint(pc)
+        background: none
+        background-color: #eee
+    +breakpoint(mobile)
+        padding-bottom: 1em  
+    .col-md-offset-6
+        background: url(../images/commonBg/diceBg.png) -3vh 50vh no-repeat
+        background-blend-mode: darken
+        text-align: center
+        padding: 12vw 0        
+        +breakpoint(pc)
+            background-position: 15vh 35vh
+        +breakpoint(pad)
+            background-position: -5vh 20vh              
+        +breakpoint(mobile)
+            background-position: -5vh 10vh
+        .playwayBox
+            margin-top: 2.5vw
+        h3 
+            color: $colorBrown
+            font-size: 2.5em
+            margin-bottom: 2vh
+            +breakpoint(pc)
+                font-size: 2.2em
+            +breakpoint(pad)
+                font-size: 2em
+            +breakpoint(mobile)
+                font-size: 1.8em
+        span
+            text-align: center
+            font-size: 1.5em
+            background-color: $colorBrown
+            color: #fff
+            padding: 5px 8px
+            +breakpoint(pc)
+                font-size: 1.2em
+            +breakpoint(pad)
+                font-size: 1em
+            +breakpoint(mobile)
+                font-size: 0.8em
+        .playwayItem 
+            display: inline-block
+            width: calc(100% / 4 - 25px)
+            vertical-align: top
+            margin: 2.4vw 0.5em
+            +breakpoint(pc)
+                width: calc(100% / 2 - 25px)
+            +breakpoint(pad)
+                width: calc(100% / 2 - 25px)
+            +breakpoint(mobile)
+                width: 100%
+            
+            .icon
+                vertical-align: middle
+                border: 2px solid #fe7823
+                background-color: #ffa800
+                color: #fff
+                border-radius: 50%
+                text-align: center
+                margin: 0 auto
+                margin-bottom: 2.5vh
+                line-height: 1.8
+                +size(125px)
+                +breakpoint(pad)
+                    +size(120px)                    
+                +breakpoint(mobile)
+                    line-height: 2
+                    +size(115px)
+                h1 
+                    margin: 0
+                    margin-top: 0.5vw
+                    font-size: 3em
+                    line-height: 1.4                    
+                    +breakpoint(mobile)
+                        font-size: 2.8em
+                        line-height: 1.2                   
+                        
+                span 
+                    font-size: 1.2em
+                    background-color: transparent
+                    padding: 0
+                    +breakpoint(pc)
+                        font-size: 1.3em
+                    +breakpoint(mobile)
+                        font-size: 1.3em
+#cooperation
+    text-align: center
+    padding: 8em 0 2em
+    +breakpoint(pc)
+        padding: 6em 0 2em
+    +breakpoint(pad)
+        padding: 4em 0 2em
+    +breakpoint(mobile)
+        padding: 2em 0
+    h3 
+        color: $colorBrown
+        font-size: 3em
+        margin-bottom: 2em
+        +breakpoint(pc)
+            font-size: 2.8em
+        +breakpoint(pad)
+            font-size: 2.5em
+        +breakpoint(mobile)
+            font-size: 2em
+    .supplier
+        background-color: rgba(0,0,0,.1)
+        .container 
+            width: 100%
+            .supplierItem
+                padding: 0
+                img 
+                    filter: grayscale(100%)
+                    transition: all 0.5s
+                    width: 100%
+                    &:hover 
+                        filter: grayscale(0%)
+                        transition: all 0.5s
+                        cursor: pointer
+            .comingSoon
+                img
+                    filter: grayscale(0%) 
+                    &:hover 
+                        cursor: none
+                
+
+    button.joinUs 
+        border: 1px solid $colorOrange
+        background-color: #ffa800
+        color: #fff
+        font-size: 1.2em
+        margin: 3em auto
+        width: 12%
+        padding: 12px 0
+        &:hover
+            background-color: lighten(#ffa800,10%)
+        +breakpoint(pc)
+            width: 30%
+        +breakpoint(pad)
+            width: 40%
+        +breakpoint(mobile)
+            width: 50%
+            font-size: 1em
+// product
+#porductVisual
+    +bg('productVisual.png')
+    overflow: hidden
+#productPage
+    +bg('productPage.png')
+    padding: 0
+    .container 
+        width: 100%
+    .productItem
+        text-decoration: none
+        height: calc(100vh / 2)
+        padding-top: 9vh
+        +breakpoint(pad)
+            padding-top: 6vh
+        &:hover
+            transition: background-color 0.5s
+        h1 
+            margin-bottom: 1.5em
+            +breakpoint(pc)
+                margin-bottom: 1em
+            +breakpoint(pad)
+                font-size: 2.2em
+                margin-bottom: 1.8em
+            +breakpoint(mobile)
+                font-size: 2em 
+            
+        p
+            font-size: 1.2em 
+            +breakpoint(pc)
+                margin-bottom: 1em
+                line-height: 1.2
+            +breakpoint(pad)
+                font-size: 1.2em  
+            +breakpoint(mobile)
+                font-size: 1em 
+               
+        &:nth-child(1),&:nth-child(2)
+            &:hover
+                background-color: rgba(#fff,.8)
+            h1 
+                color: $colorBrown
+            p
+                color: #444
+        &:nth-child(3),&:nth-child(4)
+            &:hover
+                background-color: rgba(#001c58,.8)
+            h1 
+                color: $colorOrange
+            p
+                color: #fff
+        &:nth-child(1)
+            background-color: rgba(#fff,.6)
+        &:nth-child(2)
+            background-color: rgba(#fff,.4)
+        &:nth-child(3)
+            background-color: rgba(#001c58,.4)
+        &:nth-child(4)
+            background-color: rgba(#001c58,.6)
+.cardbox:hover 
+    text-decoration: none!important
+#productPage02
+    +bg('productcard.png')
+    overflow: hidden
+    clear: both
+    background-position: right center
+    background-color: #1e2d4e
+    position: relative
+    transition: background-color 0.5s
+    &:hover
+        background-color: rgba(#001c58,.8)
+    +breakpoint(pc)
+        background: none
+        background-color: #1e2d4e
+    .markSaba,.markSport
+        font-family: "ANTON-REGULAR"
+        font-size: 120px
+        position: absolute
+        font-weight: 900
+        color: rgba(0,0,0,.06)
+        +breakpoint(pc)
+            font-size: 100px
+        +breakpoint(mobile)
+            font-size: 80px
+    .markSaba
+        +position(0,5%)
+    .markSport
+        +position(40%,15%)
+    .sportbox03
+        padding: 5em
+        +breakpoint(pc)
+            text-align: center
+            padding: 5em 0
+        h3 
+            color: $colorOrange
+            font-size: 2.5em
+            margin-bottom: 2vh
+            margin-left: 4vh       
+            +breakpoint(pc)
+                font-size: 2.2em
+                margin-left: 0
+            +breakpoint(pad)
+                font-size: 2em
+            +breakpoint(mobile)
+                font-size: 1.8em
+            img 
+                margin: 0 10px
+                width: 100px
+        p
+            font-size: 1.4em
+            margin: 2vw 0
+            font-weight: 100
+            color: #fff
+            +breakpoint(pc)
+                font-size: 1.2em
+            +breakpoint(pad)
+                font-size: 1em
+            +breakpoint(mobile)
+                font-size: 0.8em
+
+// sport
+#sportVisual
+    +bg('sportVisual.png')
+    h1 
+        left: 0%  
+#sportPage01
+    +bg('sportPage01.png')
+    .sportbox01
+        background-color: rgba(#001c58,.8)
+        +size(50%,40%)            
+        +breakpoint(pc)
+            +size(80%,60%)
+        &:before 
+            position: absolute
+            content: ''
+            background: rgba(#001c58,.6)
+            +position(10%,5%)
+            +size(90%,80%)
+            +breakpoint(pc)
+                +size(90%,85%)
+            +breakpoint(mobile)
+                +size(85%,85%)
+        h1,p
+            left: 50%
+            width: 100%
+        h1 
+            top: 25%
+            font-size: 2.8em
+            +breakpoint(pc)
+                font-size: 2.6em
+            +breakpoint(pad)
+                font-size: 2.4em
+            +breakpoint(mobile)
+                font-size: 2em
+        p 
+            top: 50%
+            &:nth-child(2)
+                top: 70%
+            font-size: 1.4em
+            +breakpoint(pad)
+                font-size: 1.2em
+
+            
+#sportPage02
+    +bgSide('sportSide.png')
+    background-position: left center
+    background-color: #1b1b1b
+    color: #fff
+    position: relative
+  
+    +breakpoint(pc)
+        background: none
+        background-color: #1b1b1b
+    .markThe,.markCrown,.markSport
+        font-size: 120px
+        position: absolute
+        font-weight: 900
+        font-family: "ANTON-REGULAR"
+        color: rgba(255,255,255,.06)
+        +breakpoint(pc)
+            font-size: 110px
+        +breakpoint(mobile)
+            font-size: 75px
+    .markThe
+        +position(20%,60%)
+        +breakpoint(pc)
+            +position(15%,25%)
+        +breakpoint(pad)
+            +position(15%,5%)
+    .markCrown
+        +position(40%,65%)
+        +breakpoint(pc)
+            +position(35%,30%)
+        +breakpoint(pad)
+            +position(35%,10%)
+        +breakpoint(mobile)
+            +position(35%,5%)
+    .markSport
+        +position(60%,70%)
+        +breakpoint(pc)
+            +position(55%,35%)
+        +breakpoint(pad)
+            +position(55%,30%)
+        +breakpoint(mobile)
+            +position(55%,15%)
+    h3,span 
+        color: $colorOrange
+    h3 
+        margin-bottom: 2vw
+    span 
+        letter-spacing: 1px
+        font-weight: 100
+        font-size: 1.4em
+        +breakpoint(mobile)
+            font-size: 1.2em
+    .sportBox
+        margin-top: 4vw
+        +breakpoint(pc)
+            width: 100%
+        .sportItem:nth-child(1),.sportItem:nth-child(2),.sportItem:nth-child(3)
+            margin-bottom: 2vw
+            +breakpoint(pc)
+                margin-bottom: 0
+            
+        img 
+            margin-bottom: 1vw
+            +size(100px)
+        
+        
+             
+#sportPage03,#sportPage04
+    +bgSide('sportSide02.png')
+    background-position: right center
+    background-color: #ece6db
+    position: relative
+    height: 50vh
+    +breakpoint(pc)
+        background: none
+        background-color: #ece6db
+        height: auto
+    .markSaba,.markSport
+        font-family: "ANTON-REGULAR"
+        font-size: 150px
+        position: absolute
+        font-weight: 900
+        color: rgba(0,0,0,.06)
+        +breakpoint(pc)
+            font-size: 100px
+        +breakpoint(mobile)
+            font-size: 80px
+    .markSaba
+        +position(5%,5%)
+    .markSport
+        +position(40%,15%)
+    .sportbox03
+        padding: 8% 15%
+        +breakpoint(pc)
+            text-align: center
+            padding: 5em 0
+        h3 
+            color: $colorOrange
+            font-size: 2.5em
+            margin-bottom: 2vh
+            margin-left: 4vh            
+            +breakpoint(pc)
+                font-size: 2.2em
+            +breakpoint(pad)
+                font-size: 2em
+            +breakpoint(mobile)
+                font-size: 1.8em
+            img 
+                margin: 0 10px
+                width: 100px
+        p
+            font-size: 1.4em
+            margin: 2vw 0
+            font-weight: 100
+            color: $colorBrown 
+            +breakpoint(pc)
+                font-size: 1.2em
+            +breakpoint(pad)
+                font-size: 1em
+            +breakpoint(mobile)
+                font-size: 0.8em
+#sportPage04
+    +bgSide('sportSide03.png')
+    background-position: left center
+    background-color: #534b72
+    +breakpoint(pc)
+        background: none
+        background-color: #534b72
+    .markSaba
+        right: 25%
+        left: auto
+    .markSport
+        right: 15%
+        left: auto
+    .sportbox03
+        +breakpoint(pc)
+            text-align: center
+        h3
+            margin-right: 4vh
+            text-align: right
+            +breakpoint(pc)
+                text-align: center
+        p
+            text-align: right
+            color: #fff
+            +breakpoint(pc)
+                text-align: center
+#electronicVisual
+    +bg('electronicVisual.png')
+#electronicPage01
+    +bg('electronicPage01.png')
+    .electronicbox01
+        background-color: rgba(#ff6d00,.8)
+        +breakpoint(mobile)
+            width: 100%
+        h1
+            +breakpoint(pad)
+                font-size: 2em
+            +breakpoint(mobile)
+                font-size: 1.8em
+        p
+            +breakpoint(pad)
+                font-size: 1.2em 
+            +breakpoint(mobile)
+                font-size: 1em
+#videoVisual
+    +bg('videoVisual.png')
+#videoPage01
+    +bgSide('videoSide.png')
+    background-position: left center
+    background-color: #eee
+    padding-top: 0
+    padding-bottom: 0
+    color: $colorBrown
+    +breakpoint(pc)
+        background: none
+        background-color: #eee 
+    .col-md-offset-6    
+        text-align: center
+        padding: 12vw 0
+        h3 
+            font-size: 2.5em
+            +breakpoint(pc)
+                font-size: 2.2em
+            +breakpoint(pad)
+                font-size: 2em
+            +breakpoint(mobile)
+                font-size: 1.8em
+            &:nth-child(2)
+                margin-bottom: 3vw
+            
+        .videoBox
+            margin: 0 auto
+            margin-top: 6vw
+            width: 65%
+            border: 1px solid $colorBrown
+            padding: 1em
+            +breakpoint(mobile)
+                width: 90%
+                margin-bottom: 3em
+            h3 
+                margin-bottom: 1em
+            p 
+                padding: 0
+                line-height: 1.2
+            
+    
+#cardgame
+    +bg('cardgame.jpg')
+#gamePage01
+    +bg('gamebleSide.png')
+    background: url(../images/imageSide/gamebleSide.png) left center no-repeat
+    padding-top: 0
+    text-align: center
+    background-position: left center
+    background-color: #eee
+    color: $colorBrown
+    +breakpoint(pc)
+        background: none
+        background-color: #eee 
+    .col-md-offset-6    
+        text-align: center
+        padding: 12vw 0
+        h3 
+            font-size: 2.5em
+            +breakpoint(pc)
+                font-size: 2.2em
+            +breakpoint(pad)
+                font-size: 2em
+            +breakpoint(mobile)
+                font-size: 1.8em
+            &:nth-child(2)
+                margin-bottom: 3vw
+            
+        .videoBox
+            position: relative
+            margin: 0 auto
+            margin-top: 6vw
+            width: 80%
+            border: 1px solid $colorBrown
+            padding: 1em
+            +breakpoint(mobile)
+                &:before,&:after
+                    opacity: 0
+            &:before
+                content: ""
+                position: absolute
+                right: -15px
+                bottom: -15px
+                width: 30px
+                height: 30px
+                background: $colorBrown
+            &:after
+                content: ""
+                position: absolute
+                top: -40px
+                left: -40px
+                width: 80px
+                height: 80px
+                border: 1px solid $colorBrown
+            +breakpoint(mobile)
+                width: 90%
+                margin-bottom: 3em
+            h3 
+                margin-bottom: .5em
+                border-bottom: 1px solid $colorBrown
+                padding-bottom: .5em
+                display: inline-block
+                img
+                    width: 45px
+            p 
+                padding: 0
+                line-height: 1.2
+            
+#cultureVisual
+    +bg('cultureVisual.png')
+
+#culturePage01
+    background: url(../images/geometry/cultureSquare03.png) no-repeat 55% bottom, url(../images/imageSide/cultureSide.png) left center no-repeat
+    padding-top: 0
+    text-align: center
+    +breakpoint(pc)
+        background: url(../images/geometry/cultureSquare03.png) no-repeat 5% bottom, none
+        background-color: #eee             
+    +breakpoint(pad)
+        background: url(../images/geometry/cultureSquare03.png) no-repeat 15% bottom, none
+        background-color: #eee  
+        
+    .col-md-offset-6
+        background: url(../images/geometry/cultureSquare01.png) no-repeat right top
+        padding: 4vw 0
+        .cultureItem
+            margin: 4em auto
+            width: 70%
+            border: 2px solid $colorBrown
+            border-top: 5px solid $colorBrown
+            background: #e5e3e2
+            padding: 2em 4em
+            +breakpoint(mobile)
+                text-align: left
+                width: 80%
+                padding: 1em
+            h1
+                color: $colorBrown
+                font-size: 3em
+                +breakpoint(pc)
+                    font-size: 2.5em
+                +breakpoint(pad)
+                    font-size: 2em
+                +breakpoint(mobile)
+                    text-align: center
+                &:nth-child(2)
+                    margin-bottom: 4vw
+            p 
+                margin-bottom: 2vw
+    
+
+    
+#culturePage02
+    padding: 5em 0 7em
+    +bg('culturePage02.png')
+    h3 
+        color: $colorOrange
+        margin: 20px auto
+        width: 280px
+        margin-bottom: 2.5vw
+        font-size: 30px
+        padding-bottom: 0.5em
+        border-bottom: 3px solid $colorOrange
+    .slick-carousel
+        margin: 80px auto
+        width: 80%
+    .slick-slide
+        margin: 20px
+        +breakpoint(pc)
+        img 
+            width: 100%
+    .slick-dots
+        bottom: -25px
+    .slick-next::before,
+    .slick-prev::before 
+        font-size: 40px
+        color: rgba(255,255,255,.8)
+        width: 20px
+        +breakpoint(pad)
+            display: none
+    
+#culturePage03
+    +bg('culturePage03.png')    
+    padding: 4.8em 0 3em
+    height: auto
+    .cultureItem03
+        background-color: rgba(#ffdc99,0.6)
+        padding: 6px 0
+        margin: 2em 0
+        p 
+            margin: 0 0 2px
+        img
+            margin-bottom: 1em
+        .col-sm-4
+            margin-bottom: 1.2em
+            img 
+                width: 120px
+                +breakpoint(pad)
+                    width: 100px  
+        .col-sm-3
+            +breakpoint(pc)
+                padding: 0 10px
+            img 
+                width: 120px
+                +breakpoint(pad)
+                    width: 100px
+
+#mobileVisual  
+    +bg('mobileVisual.png')
+    p 
+        +breakpoint(mobile)
+            top: 70%
+#mobilePage01
+    background: linear-gradient(-70deg, rgba(255, 220, 153, 0.6) 700px, transparent 0), url(../images/bgImage/mobilePage01.png) center center / cover no-repeat
+    +breakpoint(bigpc)
+        padding-top: 0.5em
+    +breakpoint(pc)
+        background: linear-gradient(-70deg, rgba(255, 220, 153, 0.6) 550px, transparent 0), url(../images/bgImage/mobilePage01.png) center center / cover no-repeat
+    +breakpoint(pad)
+        background: linear-gradient(-40deg, rgba(255, 220, 153, 0.6) 550px, transparent 0), url(../images/bgImage/mobilePage01.png) center center / cover no-repeat        
+    h3 
+        margin-top: 1.6em
+    .mobileBox
+        .subTitle
+            margin: 1vw auto 2vw
+        p
+            +breakpoint(pad) 
+                font-size: 0.8em
+        .mobileItem
+            img
+                width: 55%
+                +breakpoint(pad)
+                    +size(120px)
+
+        .mobileBigItem
+            margin-bottom: 2em                            
+            +breakpoint(pad)
+                margin-bottom: 1.8em                
+            img
+                width: 25%
+                +breakpoint(pad)
+                    +size(120px) 
+
+#mobilePage02
+    +bg('mobilePage02.png')
+    color: #fff
+    text-align: center
+    .container
+        background-color: rgba(#040227,.7)
+        padding: 5em 0
+        h2 
+            +breakpoint(mobile)
+                font-size: 1.6em
+        p 
+            font-size: 1.6em
+            margin-top: 2vw
+            font-weight: 100
+            +breakpoint(mobile)
+                font-size: 1.2em
+    
+#lotteryVisual
+    +bg('lotteryVisual.png')
+
+#lotteryPage01
+    +bg('lotteryPage01.png')
+    .container
+        margin-top: 2.8em 
+        padding: 3.8em 2.5em
+        border: 1px solid $colorBrown
+        background-color: rgba(255,255,255,.6)
+        .title
+            margin-bottom: 2.5em
+        p
+            color: #525252
+            font-weight: 500
+        .lottery
+            li
+                list-style: none
+                padding: 0
+                margin: 0 20px
+                +grid(5,5px)
+                +breakpoint(pc)
+                    width: 155px
+                +breakpoint(pad)
+                    +grid(5,5px)
+                +breakpoint(mobile)
+                    width: 100%
+                    text-align: center
+                    margin: 0
+                    img 
+                        margin: 0 auto
+            
+
+
+
+#lotteryPage02
+    +bg('lotteryPage02.png')
+    +breakpoint(bigpc)
+        padding: 2em 0
+    +breakpoint(pc)
+        height: auto
+    h3  
+        color: $colorOrange
+        margin-bottom: 1.6em
+        +breakpoint(pc)
+            margin-bottom: 2.5em
+    .col-md-6 
+        position: relative
+        +breakpoint(pc)
+            margin-bottom: 4.5em
+        >img 
+            position: absolute
+            width: 100px
+            -webkit-transform: translate(-50%, -50%)
+            transform: translate(-50%, -50%)
+            +position(0%,50%)
+        .icon-arrow-right:before 
+            font-size: 1.2em
+    .lotteryBox
+        color: #fff
+        border: 2px solid $colorOrange
+        border-top: 5px solid $colorOrange
+        background-color: rgba(0, 0, 0, 0.3)
+        padding: 1.2em
+        +breakpoint(pad)
+            margin-top: 4.5em
+        p 
+            margin: 0
+            line-height: 1.8
+            height: 100px
+            +breakpoint(bigpc)
+                height: 70px
+            +breakpoint(pc)
+                height: 12vw
+            +breakpoint(mobile)
+                height: 120px
+            +breakpoint(mobile)
+                height: 150px
+           
+        .title
+            margin: 5.5vh 2vh 1.5vh
+            text-align: left
+
+        .more,.more2
+            border: 1px solid $colorOrange
+            color: $colorOrange
+            background-color: transparent
+            padding: 0.5em 1.8em
+            &:hover 
+                color: #fff
+                background-color: $colorOrange
+            span 
+                font-size: 1.2em
+                margin-left: 3px
+
+    .lotteryRoom,.lotteryRoom2
+        margin-bottom: 3vh
+    .lotteryRoom,.lotteryRoom2,.lotteryHidden,.lotteryHidden2
+        li
+            list-style: none
+            padding: 0
+            margin: 5px 6px
+            float: none
+            display: inline-block
+            img 
+                width: 80px
+                +breakpoint(pad)
+                    width: 60px   
+                +breakpoint(mobile)
+                    width: 50px   
+#lotteryPage03
+    +bg('lotteryPage03.png')    
+    color: $colorBrown
+    text-align: center
+    .container
+        background-color: rgba(#fff,.4)
+        padding: 5em 0
+        h2 
+            +breakpoint(mobile)
+                font-size: 1.6em
+
+#cooperationVisual
+    +bg('cooperationVisual.png')
+    h1 
+        +position(40%,0%)
+        +breakpoint(pad)
+            +position(30%,0%)
+    p 
+        +breakpoint(mobile)
+            font-size: 1.6em
+
+    
+#cooperationPage01
+    background:  url(../images/commonBg/pokerBg.png) right 20vh / cover no-repeat #cfcfcf
+    +breakpoint(bigpc)
+        padding-top: 1.2em
+    +breakpoint(pad)
+        background-position: right 35vh
+    .row 
+        margin-left: 0
+        margin-right: 0
+    h3 
+        margin: 1em 0 0.6em
+        +breakpoint(bigpc)
+            margin: 1.2em 0 0.3em
+            margin-top: 1.4em
+    .contactBox
+        margin-top: 0.5vw
+        border: 8px solid #ff8a00
+        background-color: #ff8a00
+        .col-md-6:nth-child(1)
+            padding: 6em
+            text-align: left
+            +breakpoint(bigpc)
+                padding: 2em 6em
+            +breakpoint(pc)
+                padding: 4em 2em 0
+            h4 
+                text-align: center
+                margin-bottom: 2vw
+            p 
+                color: #fff
+                padding: 0
+                line-height: 1.6
+            .infor 
+                margin: 2vw 0
+                line-height: 2
+        .col-md-6:nth-child(2)
+            background-color: #d0d0d0
+            padding: 2.6vw 2vw
+            
+        input,textarea,button
+            width: 100%
+            margin-bottom: 1.2vw
+            padding: 5px
+        button 
+            padding: 1em 0
+            background-color: $colorOrange
+            color: #fff 
+
+#cooperationPage02
+    +bgSide('cooperationSide01.png')
+    background-position: right center
+    background-color: rgba(#1463a5,.035)    
+    text-align: left
+    padding: 5.5em 6.5em
+    line-height: 2
+    +breakpoint(bigpc)
+        padding-top: 1.2em
+        background-position: 40em
+    +breakpoint(pc)
+        background: none
+        background-color: rgba(#1463a5,0.1)
+        padding: 4em
+        text-align: center
+    +breakpoint(pad)
+        padding: 4em 2em 6.5em
+    h3 
+        margin-top: 1em
+        +breakpoint(bigpc)
+            margin-top: 1.4em             
+    h3,h4,p 
+        color: $colorBlue
+    p 
+        font-size: 1.2em
+    ol 
+        padding-left: 15px
+        margin-bottom: 2em
+        +breakpoint(pc)
+            margin-bottom: 1em
+            display: table
+            margin: 0 auto
+        li 
+            +breakpoint(pc)
+                text-align: left
+                line-height: 2.5
+    .title 
+        margin-bottom: 2.5em
+    button 
+        padding: 0.5em 2.5em
+        background-color: $colorBlue
+        color: #fff
+        &:hover 
+            background-color: lighten($colorBlue,10%)
+        .icon-download
+            padding-right: 8px
+            
+    a.scroll
+        color: #887267
+    span.arrow
+        border-left: 4px solid #887267
+        border-bottom: 4px solid #887267
+
+#cooperationPage03
+    +bgSide('cooperationSide02.png')
+    background-position: right center
+    background-color: rgba($colorOrange,.035)
+    text-align: left
+    padding: 5.5em 6.5em
+    +breakpoint(bigpc)
+        padding-top: 1em
+        background-position: 45em
+    +breakpoint(pc)
+        background: none
+        padding: 4em
+        background-color: rgba($colorOrange,0.1)
+    +breakpoint(pad)
+        padding: 4em 2em 6em
+    table 
+        background-color: #fff5ed
+        thead
+            background-color: #ff8a33
+            color: #fff
+    h3 
+        margin-top: 1em
+        margin-bottom: 0
+        +breakpoint(bigpc)
+            margin-top: 1.4em  
+        +breakpoint(pc)
+            margin-top: 0.8em   
+    .title 
+        margin-bottom: 4em
+        +breakpoint(bigpc)
+            margin-bottom: 2em  
+        h3
+            color: $colorOrange
+    p.info 
+        width: 65%
+        line-height: 2
+        +breakpoint(pc)
+            width: 100%
+    .cooperationItem
+        text-align: left
+        padding: 15px
+        margin-bottom: 15px
+        +breakpoint(bigpc)
+            padding: 8px 15px 4px
+            margin: 0
+        +breakpoint(pc)
+            text-align: center
+        img
+            +breakpoint(pc) 
+                width: 80px
+            +breakpoint(pc) 
+                width: 60px
+        img,p
+            width: 45%
+            +breakpoint(pc)
+                width: 150px
+        p 
+            text-align: center
+            +breakpoint(pc) 
+                width: 100%
+        
+            
+    button 
+        padding: 0.5em 2.5em
+        background-color: $colorOrange
+        color: #fff
+        &:hover 
+            background-color: lighten($colorOrange,10%)
+        .icon-download
+            padding-right: 8px
+
+.cooperationBox
+    width: 50%
+    +breakpoint(pc)
+        width: 100%
+        text-align: center    
+
+#newsVisual
+    +bg('newsVisual.png')
+
+#newsPage01 
+    /*+bg('newsPage01.png')*/
+    height: auto
+    padding-top: 6em
+    min-height: calc(100vh - 80px)
+    
+    h3
+        position: relative
+        color: #3c3c3c
+        &:before,&:after
+            position: absolute
+            content: ""
+            top: 50%
+            background-color: #3c3c3c
+            +size(40px,2px)
+            +breakpoint(pc)
+                background-color: transparent
+        &:before
+            left: 35%
+        &:after
+            right: 35%
+    .bannerItem
+        .bannerItem_imgout
+            overflow: hidden
+            background-size: cover
+            background-position: center
+    .newsBigBanner,.newsBanner
+        margin: 0 0
+        .slick-dots
+            bottom: -25px
+        .slick-slide
+            margin: 20px 0
+    .innewsBanner
+        margin-top: 20px
+        +breakpoint(pc)
+            margin-top: 0px
+        .bannerboxstyle_one
+            width: 100%
+        .bannerboxstyle_two
+            width: 50%
+            +breakpoint(pad)
+                width: 100%
+    h5 
+        color: #444
+    #NewsLightBox
+        border: 1px solid #444
+        margin-top: 30px
+        width: 100%
+        cursor: pointer
+        .lightboxspanimg
+            position: relative
+            &:after
+                position: absolute
+                content: ''
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                background: #ffffff
+                opacity: 0
+                transition: opacity 0.5s 
+        &:hover
+            .lightboxspanimg
+                &:after
+                    opacity: 0.2
+        img
+            margin: 0
+            padding: 0
+            transition: opacity 0.5s 
+            width: 100%
+            position: relative
+        .newsText 
+            background: linear-gradient(to top, rgba(255,255,255,0.7), rgba(255,255,255,1))
+            padding: 12px
+            font-size: 1.2em
+            text-align: left
+    .col-sm-4
+        .bannerItem_imgout
+            max-height: 160px
+    .col-sm-4,.col-lg-12
+        +breakpoint(mobile)
+            margin-top: 20px
+            padding-left: 0
+            padding-right: 0
+        .bannerItem
+            border: 0px solid #000
+            .bannerItem_imgout
+                position: relative
+                &:after
+                    position: absolute
+                    content: ''
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                    background: #000
+                    opacity: 0
+                    transition: opacity 0.5s
+        &:hover
+            .bannerItem_imgout
+                &:after
+                    opacity: 0.2
+        .newsText
+            padding: 10px 15px
+            font-size: 1.2em
+            +breakpoint(pad)
+                padding: 8px
+            img 
+                width: 100%
+            .title 
+                overflow: hidden
+                text-overflow: ellipsis
+                white-space: nowrap
+                //width: 200px
+                text-align: left
+                +breakpoint(pc)
+                    //width: 150px             
+    .date 
+        font-size: 13px
+        color: #b3b3b3
+    .close
+        display: block
+        position: absolute
+        z-index: 1003
+        top: 0
+        right: 0
+        padding: 4px 7px
+        color: #2c2c2c
+        font-size: 2.4em   
+        &:hover
+            color: #666
+            transition: all 0.5s
+            cursor: pointer
+    
+    .Newsoverlay
+        display: none
+        position: fixed
+        background-color: #000
+        z-index: 1001
+        opacity: .8
+        +position(0%)
+        +size(100%)
+    
+    .Newscontent
+        display: none
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background: #ddd
+        z-index: 1002
+        padding: 10px 26px
+        font-size: 14px
+        overflow-x: auto
+        +position(50%)
+        +breakpoint(mobile)
+            width: 80%
+            padding: 16px 14px 10px
+
+        h4 
+            font-size: 1.8em
+        hr 
+            border-top: 1px solid #9b9999
+
+#caseVisual
+    +bg('caseVisual.png')
+    h1 
+        +breakpoint(pad)
+            top: 40%
+            left: 0
+    
+#casePage01
+    padding: 5em 0 7em
+    +bg('casePage01.png')
+    overflow: hidden
+    .slick-carousel
+        margin: 40px auto
+        width: 80%
+        +breakpoint(mobile)
+            width: 90%
+    .slick-slide
+        margin: 20px
+        +breakpoint(pad)
+            margin: 10px
+        img 
+            width: 100%
+
+    .slick-next::before,
+    .slick-prev::before 
+        font-size: 40px
+        color: #fff
+        background-color: #241e1c
+        width: 20px
+        +breakpoint(pad)
+            display: none
+    .slick-dots
+        bottom: -25px
+    .slick-dots li button:before
+        color: #ccc
+        background: #444
+        
+    .slick-dots li.slick-active button:before
+        color: #eee
+
+#casePage02
+    +bg('casePage02.png')
+    position: relative
+    .caseAchievement
+        text-align: left
+        position: absolute
+        padding: 40px
+        background-color: #fff
+        right: 10%
+        bottom: 20%
+        +size(30%,32%)
+        +breakpoint(pc)
+            +size(40%,35%)
+        +breakpoint(pad)
+            position: static
+            margin: 0 auto
+            width: 80%
+            +size(100%)
+        h3 
+            color: $colorOrange
+            margin-bottom: 0.8em
+        ol 
+            padding-left: 20px
+        .goal
+            position: absolute
+            z-index: 2 
+            color: #fff
+            margin-top: 20px
+            padding: 10px 20px
+            background-color: $colorOrange
+            width: 120%
+            left: -20%
+            bottom: 5%
+            +breakpoint(pad)
+                position: static
+                +size(100%)
+#casePage03
+    +bg('casePage03.png')
+    +breakpoint(bigpc)
+        padding-top: 2em
+    h3 
+        margin-bottom: 32px
+        margin-top: 8px
+    .col-sm-3
+        padding: 0px 10px
+        margin-bottom: 50px
+        +breakpoint(bigpc)
+            margin-bottom: 20px
+            &:nth-child(5),&:nth-child(6),&:nth-child(7),&:nth-child(8)
+                margin-bottom: 0   
+        +breakpoint(pad)
+            width: 100%
+            padding: 10px 20px
+            margin: 0
+        .img-frame
+            overflow: hidden
+            height: 160px
+            margin-bottom: 1em
+            +breakpoint(pc)
+                height: 90px
+            +breakpoint(pad)
+                height: 20%
+            +breakpoint(mobile)
+                height: 20%
+                
+            img
+                vertical-align: top  
+                width: 100%
+        p 
+            +breakpoint(pad)
+                height: 100px
+#mainVisual .modal-content
+    background-color: rgba(0, 0, 0, 0.8)
+.modal-header 
+    .close
+        color: #fff!important
+        opacity: .5
+        transition: all 0.3s
+        &:hover
+            opacity: 1
+.modal-dialog
+    width: auto
+    max-width: 1280px
+
+
+.airshipbox
+    background: url(../images/airship01.png) no-repeat, url(../images/imageSide/airshopSide.png) no-repeat
+    background-color: #fcf3db
+    background-position: left bottom ,right center
+    background-size: 25%,contain
+    color: #440202
+    font-size: 1.4em
+    position: relative
+    padding: 8% 8% 2%
+    line-height: 1.8
+    +breakpoint(pc)
+        width: 100%
+    +breakpoint(pc)
+        background: none
+        background-color: #fcf3db
+    +breakpoint(pad)
+        font-size: 2.5vh
+    .airshipText
+        width: 30%
+        +breakpoint(pc) 
+            width: 100%
+    .marktip
+        font-size: 1.2em
+        font-weight: 600
+        font-style: italic
+        border-left: 10px solid #b90302
+        padding: 2px
+        padding-left: 12px
+        color: #b90302
+
+    .markLucky,.markAirship
+        font-family: "erasbolditc"
+        font-size: 80px
+        position: absolute
+        font-weight: 900
+        color: rgba(0,0,0,.06)
+        +breakpoint(pc)
+            font-size: 100px
+        +breakpoint(pad)
+            display: none
+            
+    .markLucky
+        +position(0%,20%)
+    .markAirship
+        +position(18%,28%)
+.airshipbox02,.airshipbox03
+    height: 50vh
+    line-height: 1.8
+    padding: 4%
+    padding-left: 12%
+    color: #fff
+    font-size: 1.4em  
+    font-weight: 350
+    +breakpoint(bigpc)
+        padding-top: 8%
+        padding-left: 6%
+    +breakpoint(pc)
+        padding-left: 5%
+        height: 40vh  
+    +breakpoint(pad)
+        padding-left: 12%  
+        font-size: 2.5vh  
+        height: auto
+    .marktip
+        font-size: 1.2em
+        font-weight: 550
+        margin-bottom: 5%
+        font-style: italic
+        border-left: 8px solid #fff
+        padding: 8px
+        padding-left: 12px
+        +breakpoint(bigpc)
+            margin-bottom: 10%
+        +breakpoint(pc)
+            margin-bottom: 12%
+        span 
+            font-size: 0.6em
+            font-weight: 350
+
+.airshipbox02
+    +bg('LuckyAirShip_01.png')
+
+.airshipbox03
+    +bg('LuckyAirShip_02.png')

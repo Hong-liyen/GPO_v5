@@ -1,0 +1,260 @@
+/* ==========================================================================
+    01- horizontal-lines
+========================================================================== */ 
+.head-lines {
+	position: relative;
+	text-align: center;
+	padding-bottom: .4em;
+	margin-bottom: 5%;
+	letter-spacing: 2px;
+}
+.head-lines:before {
+	content: '';
+	display: block;
+	border-bottom: 3px solid #ddd;
+	width: 100%;
+	position: absolute;
+	bottom: -3px;
+	margin: 0 auto;
+}
+.head-lines:after {
+	border-bottom: 3px solid #ec9f00;
+	content: '';
+	display: block;
+	width: 4.2em;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	margin-left: -2.1em;
+}
+/* ==========================================================================
+    02- section-head
+========================================================================== */  
+/* section-head*/
+h1.section-head {
+	text-align: center;
+	position: relative;
+	color: #CB261D;
+	top: 0;
+	letter-spacing: 2px;
+	padding-bottom: .4em;
+	margin-bottom: .5em;
+}
+h1.section-head:after {
+	display: block;
+	background-color: #cb261d;
+	width: 40px;
+	height: 3px;
+	content: '\0020';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -20px;
+	-webkit-transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+	-moz-transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+	-o-transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+	-ms-transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+	transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+h1.section-head:hover::after {
+	width: 50px;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+/* ==========================================================================
+    03- function-title
+========================================================================== */  
+/* .title-note-2 ~ .title-note-15*/
+[class*="title-note"] {
+	display: block;
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+	height: 25px;
+	position: relative;
+}
+.title-num {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #cb261d;
+	font-size: 90%;
+	font: normal normal 90%/1.6em Arial, sans-serif;
+	width: 25px;
+	height: 25px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	border: 2px solid #fff;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.title-text {
+	height: 25px;
+	font: normal normal 100%/1.6em "Microsoft YaHei", "PingFangSC-Regular", Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-align: left;
+	-moz-border-radius: 0px 25px 25px 0px;
+	-webkit-border-radius: 0px 25px 25px 0px;
+	border-radius: 0px 25px 25px 0px;
+	background-color: #ec9f00;
+	position: absolute;
+	top: 0;
+	left: 12.5px;
+	padding-left: 20px;
+	padding-right: 12.5px;
+	float: left;
+	z-index: 0;
+}
+.title-content {
+	width: 100%;
+	float: left;
+	padding: 2% 0;
+}
+/* ==========================================================================
+    04- procedure - title 
+========================================================================== */  
+
+.step-note {
+	display: block;
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+	margin-bottom: .8em;
+}
+.step-num {
+	font: bolder 40px/65px Arial, sans-serif;
+	color: #d82733;
+	height: 65px;
+	border-bottom: 1px solid #ddd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.step-num:after {
+	display: block;
+	background-color: #d82733;
+	width: 55px;
+	height: 1px;
+	content: '';
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.step-note:hover .step-num:after {
+	background-color: #d82733;
+	width: 100%;
+}
+.step-num > span {
+	display: inline-block;
+	font: bold 20px/20px Arial, sans-serif;
+	margin-right: 5px;
+	letter-spacing: 1px;
+	color: #d82733;
+}
+.step-num > span:after {
+	display: block;
+	background-color: #d82733;
+	width: 55px;
+	height: 3px;
+	content: '';
+	position: absolute;
+	bottom: 0;
+}
+/* ==========================================================================
+    05- tag
+========================================================================== */  
+
+.tag {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 1em;
+	line-height: 1.6em;
+	background-color: #fff;
+	height: 1.6em;
+	padding: 0 .9em;
+	position: relative;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	min-width: 20px;
+	box-sizing: border-box;
+	margin-right: 2em;
+}
+/* Draw circle*/
+.tag:before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	right: 0;
+	float: right;
+	width: 4px;
+	height: 4px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background: #fff;
+}
+/* Draw  triangle */
+.tag:after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 100%;
+	top: 0%;
+	float: left;
+	border-top: .85em solid transparent;
+	border-left: 1.6em solid #fff;
+	border-bottom: .85em solid transparent;
+}
+.tag-content {
+	-webkit-flex: 1;
+	flex: 1;
+}
+/* for oldIE - IE9 */
+.oldie .tag:after, .oldie .tag:before {
+	display: none;
+}
+/* gray */
+.tag.gray {
+	background-color: #717171;
+}
+.tag.gray:after {
+	border-left: .7em solid #717171;
+}
+/* red */
+.tag.red {
+	background-color: #d8261d;
+}
+.tag.red:after {
+	border-left: .7em solid #d8261d;
+}
+/* orange */
+.tag.orange {
+	background-color: #ec9f00;
+}
+.tag.orange:after {
+	border-left: .7em solid #ec9f00;
+}
+/* green */
+.tag.green {
+	background-color: #00943e;
+}
+.tag.green:after {
+	border-left: .7em solid #00943e;
+}

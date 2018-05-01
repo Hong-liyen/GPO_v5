@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no;">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>最新资讯</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/colorbox.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <div id="newsPageout">
+        <div class="fadeIn navbar navbar-custom navbar-default navbar-fixed-top" role="navigation" data-wow-delay="0.2s">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/icon/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="index.html">首页</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="product.html" class="dropdown-toggle">产品中心 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="lottery.html">彩票游戏</a></li>
+                                <li><a href="sport.html">体育投注</a></li>
+                                <li><a href="electronic.html">电子游艺</a></li>
+                                <li><a href="video.html">真人视讯</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="case.html">客户案例</a>
+                        </li>
+                        <li>
+                            <a href="news.html">最新快讯</a>
+                        </li>
+                        <li>
+                            <a href="culture.html">企业文化</a>
+                        </li>
+                        <li>
+                            <a href="http://df123456789.com" target="_blank">试玩体验</a>
+                        </li>
+                        <li>
+                            <a href="mobile.html">手机投注</a>
+                        </li>
+                        <li>
+                            <a href="cooperation.html">开放合作</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="newsnavlist mb">
+            <div class="newsnavlistul">
+                <li class="active" @click="newsnavlist(0)">产品<span>专栏</span></li>
+                <li @click="newsnavlist(1)">内容<span>发布</span></li>
+                <li @click="newsnavlist(2)">活动<span>专栏</span></li>
+                <!--<li @click="newsnavlist(3)">下载<span>通道</span></li>-->
+                <li class="searchbtn_mb"><img src="images/search_icon.png"></li>
+            </div>
+            <div class="searchbox_mb searchactive">
+                <div class="prepage"><i class="icon-arrow-right"></i></div>
+                <div class="newssearchbar">
+                    <div class="possearchpic">
+                        <img src="images/search_icon.png">
+                    </div>
+                    <div class="form-group">
+                        <input type="search" class="form-control" id="search" placeholder="请输入关键字" v-model="search">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="wow fadeInDown" id="newsPage01">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 newsBigBanner" data-wow-delay="0.2s">
+                        <div class="newstitle">
+                            <div class="title">最新快讯</div>
+                            <div class="rightlist">
+                                <div class="newsnavlist">
+                                    <div class="newsnavlistul">
+                                        <li class="active" @click="newsnavlist(0)">产品<span>专栏</span></li>
+                                        <li @click="newsnavlist(1)">内容<span>发布</span></li>
+                                        <li @click="newsnavlist(2)">活动<span>专栏</span></li>
+                                        <!--<li @click="newsnavlist(3)">下载<span>通道</span></li>-->
+                                    </div>
+                                </div>
+                                <div class="newssearchbar">
+                                    <div class="possearchpic"><img src="images/search_icon.png"></div>
+                                    <div class="form-group">
+                                        <input type="search" class="form-control" id="search" placeholder="请输入关键字" v-model="search">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div id="fade" class="Newsoverlay" onclick="if (!Newsmodal) HideLightBox(); return false;"></div>
+                        <div id="alerthind">
+                            <div id="alertbox" class="newsalert">
+                                <div class="alertcontent" v-for="(news,index) in newss" v-if="intopagevif(index)">
+                                    <img class="alertbannerimg" :src="news.bannerimg">
+                                    <div class="title">{{news.name}}</div>
+                                    <div class="titleline"></div>
+                                    <div class="time">{{news.time}}</div>
+                                    <div class="txt" v-html="news.containtext">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="alertbox1" class="newsalert">
+                                <div class="alertcontent" v-for="(news,index) in newss" v-if="intopagevif(index)">
+                                    <div class="newsconttitlebox">
+                                        <div class="title"  :class="{title_active:news.importanttag}">{{news.name}}</div>
+                                        <div class="time">{{news.time}}</div>
+                                    </div>
+                                    <div class="txtmain">{{news.containtexts}}</div>
+                                    <div class="txt" v-html="news.containtext">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--productpage-->
+                        <div id="news_productpage" v-show="nowlistpage==0">
+                            <div class="newsBanner">
+                                <div class="row">
+                                    <div id="innewsBanner" v-for="(news,index) in newss" v-show="news.importanttag&news.newstype==nowlistpage">
+                                        <!-- <div id="lightboxspan" onclick="ShowLightBox('Newsbox'); return false;"> -->
+                                        <a @click="clickindex(index)" :href="news.link" :target="clicktoopen(index)" :class="{alertinfbox:news.clickto}">
+                                            <div class="fadeInDown col-lg-12 innewsBannerbox" data-wow-delay="0.4s">
+                                                <div class="bannerItem">
+                                                    <div class="bannerItem_imgout" :style="'background-image: url(' + news.bannerimg + ');'">
+                                                        <img class="img-responsive" src="images/newsBanner.png" alt="">
+                                                    </div>
+                                                    <div class="newsText">
+                                                        <div class="row">
+                                                            <div class="title"><p>{{news.name}}</p></div>
+                                                            <div class="date">{{news.time}}</div>
+                                                        </div>
+                                                        <a :href="news.downloadlink" target="_blank" v-if="news.downloadbtn" class="downloadlink"><div class="download"><i class="icon-download"></i><div class="downloadtxt">素材下载</div></div></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newsBanner">
+                                <div class="row">
+                                    <div class="innewsBanner" v-for="(news,index) in filterlist" v-show="!news.importanttag&news.newstype==nowlistpage">
+                                        <a @click="clickindex(index)" :href="news.link" :target="clicktoopen(index)" :class="{alertinfbox:news.clickto}">
+                                            <div class="fadeInDown col-sm-4 innewsBannerbox" data-wow-delay="0.4s">
+                                                <div class="bannerItem">
+                                                    <div class="bannerItem_imgout" :style="'background-image: url(' + news.bannerimg + ');'">
+                                                        <img class="img-responsive" src="images/newsBanner.png" alt="">
+                                                    </div>
+                                                    <div class="newsText">
+                                                        <div class="row">
+                                                            <div class="title">
+                                                                <p>{{news.name}}</p>
+                                                            </div>
+                                                            <div class="date">{{news.time}}</div>
+                                                        </div>
+                                                        <a :href="news.downloadlink" target="_blank" v-if="news.downloadbtn" class="downloadlink">
+                                                            <div class="download">
+                                                                <i class="icon-download"></i>
+                                                                <div class="downloadtxt">素材下载</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagectrlbox">
+                                <li class="pagectrl tofirstpage icon-firstpage"></li>
+                                <li class="pagectrl prepage icon-prepage"></li>
+                                <li class="pagenum active">1</li>
+                                <li class="pagenum">2</li>
+                                <li class="pagenum">3</li>
+                                <li class="pagenum">4</li>
+                                <li class="pagenum">5</li>
+                                <li class="pagectrl nextpage icon-nextpage"></li>
+                                <li class="pagectrl tolastpage icon-lastpage"></li>
+                            </div>
+                        </div>
+                        <!--productpage_end-->
+                        <!--contentpage-->
+                        <div id="news_contentpage" v-show="nowlistpage==1">
+                            <div class="newsBanner">
+                                <div class="row">
+                                    <div class="contentpage_contentlist_out" v-for="(news,index) in filterlist"  v-show="news.newstype==nowlistpage">
+                                        <a @click="clickindex(index)" :href="news.link" :target="clicktoopen(index)" :class="{alertinfbox1:news.clickto}">
+                                            <div class="fadeInDown contentpage_contentlist_in" data-wow-delay="0.4s">
+                                                <div class="contentpage_text">
+                                                    <div class="newsText">
+                                                        <div class="title" :class="{title_active:news.importanttag}">
+                                                            <p>{{news.name}}</p>
+                                                        </div>
+                                                        <div class="newscontent"><p>{{news.containtexts}}</p></div>
+                                                        <div class="date">{{news.time}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagectrlbox">
+                                <li class="pagectrl tofirstpage icon-firstpage"></li>
+                                <li class="pagectrl prepage icon-prepage"></li>
+                                <li class="pagenum active">1</li>
+                                <li class="pagenum">2</li>
+                                <li class="pagenum">3</li>
+                                <li class="pagenum">4</li>
+                                <li class="pagenum">5</li>
+                                <li class="pagectrl nextpage icon-nextpage"></li>
+                                <li class="pagectrl tolastpage icon-lastpage"></li>
+                            </div>
+                        </div>
+                        <!--contentpage_end-->
+                        <!--eventpage-->
+                        <div id="news_eventpage"  v-show="nowlistpage==2">
+                            <div class="newsBanner">
+                                <div class="row">
+                                    <div id="innewsBanner" v-for="(news,index) in newss" v-show="news.importanttag&news.newstype==nowlistpage">
+                                        <!-- <div id="lightboxspan" onclick="ShowLightBox('Newsbox'); return false;"> -->
+                                        <a @click="clickindex(index)" :href="news.link" :target="clicktoopen(index)" :class="{alertinfbox:news.clickto}">
+                                            <div class="fadeInDown col-lg-12 innewsBannerbox" data-wow-delay="0.4s">
+                                                <div class="bannerItem">
+                                                    <div class="bannerItem_imgout" :style="'background-image: url(' + news.bannerimg + ');'">
+                                                        <img class="img-responsive" src="images/newsBanner.png" alt="">
+                                                    </div>
+                                                    <div class="newsText">
+                                                        <div class="row">
+                                                            <div class="title">
+                                                                <p>{{news.name}}</p>
+                                                            </div>
+                                                            <div class="date">{{news.time}}</div>
+                                                        </div>
+                                                        <a :href="news.downloadlink" target="_blank" v-if="news.downloadbtn" class="downloadlink">
+                                                            <div class="download">
+                                                                <i class="icon-download"></i>
+                                                                <div class="downloadtxt">素材下载</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newsBanner">
+                                <div class="row">
+                                    <div class="innewsBanner" v-for="(news,index) in filterlist" v-show="!news.importanttag&news.newstype==nowlistpage">
+                                        <a @click="clickindex(index)" :href="news.link" :target="clicktoopen(index)" :class="{alertinfbox:news.clickto}">
+                                            <div class="fadeInDown col-sm-4 innewsBannerbox" data-wow-delay="0.4s">
+                                                <div class="bannerItem">
+                                                    <div class="bannerItem_imgout" :style="'background-image: url(' + news.bannerimg + ');'">
+                                                        <img class="img-responsive" src="images/newsBanner.png" alt="">
+                                                    </div>
+                                                    <div class="newsText">
+                                                        <div class="row">
+                                                            <div class="title">
+                                                                <p>{{news.name}}</p>
+                                                            </div>
+                                                            <div class="date">{{news.time}}</div>
+                                                        </div>
+                                                        <a :href="news.downloadlink" target="_blank" v-if="news.downloadbtn" class="downloadlink">
+                                                            <div class="download">
+                                                                <i class="icon-download"></i>
+                                                                <div class="downloadtxt">素材下载</div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pagectrlbox">
+                                <li class="pagectrl tofirstpage icon-firstpage"></li>
+                                <li class="pagectrl prepage icon-prepage"></li>
+                                <li class="pagenum active">1</li>
+                                <li class="pagenum">2</li>
+                                <li class="pagenum">3</li>
+                                <li class="pagenum">4</li>
+                                <li class="pagenum">5</li>
+                                <li class="pagectrl nextpage icon-nextpage"></li>
+                                <li class="pagectrl tolastpage icon-lastpage"></li>
+                            </div>
+                        </div>
+                        <!--eventpage_end-->
+
+                        <!--downloadpage-->
+                        <div id="news_downloadpage"  v-show="nowlistpage==3">
+                            <div class="newsBanner">
+                                <div class="contentpage_contentlist_out" v-for="(news,index) in newss"  v-show="news.newstype==nowlistpage">
+                                    <a :href="news.bannerimg" target="_blank">
+                                        <div class="fadeInDown contentpage_contentlist_in" data-wow-delay="0.4s">
+                                            <div class="contentpage_text">
+                                                <div class="newsText">
+                                                    <div class="newscontent">
+                                                        <p>{{news.containtext}}</p>
+                                                    </div>
+                                                    <div class="newstype">
+                                                        {{news.name}}
+                                                    </div>
+                                                    <div class="newsdownload">
+                                                        <div class="icon-download"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="date">{{news.time}}</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pagectrlbox">
+                                <li class="pagectrl tofirstpage icon-firstpage"></li>
+                                <li class="pagectrl prepage icon-prepage"></li>
+                                <li class="pagenum active">1</li>
+                                <li class="pagenum">2</li>
+                                <li class="pagenum">3</li>
+                                <li class="pagenum">4</li>
+                                <li class="pagenum">5</li>
+                                <li class="pagectrl nextpage icon-nextpage"></li>
+                                <li class="pagectrl tolastpage icon-lastpage"></li>
+                            </div>
+                        </div>
+                        <!--downloadpage_end-->
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>© ORIENTALPLATFORM.ALL RIGHT RESERVED.<span>版权所有 东方平台</span></p>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="QQ">
+                        <span class="icon-qq-icon"> </span>
+                        <span class="icon-qq-num" 
+                            onclick="window.open('http://wpa.qq.com/msgrd?v=3&uin=2158999999&site=qq&menu=yes','_blank')">2158999999</span>
+                    </div>
+                    <div class="email">
+                        <span class="icon-mail"> </span>
+                        <p>Bwtgame88@gmail.com&nbsp;&nbsp;&nbsp;<span>opgame88@gmail.com</span></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <a href="# " class="toTop " href="# " title="top ">
+            <span>
+                <p class="icon-keyboard_arrow_up">
+                </p>
+            </span>
+        </a>
+    </div>
+</body>
+<script src="js/jquery-2.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script src="js/vue.js "></script>
+<script src="js/data.js "></script>
+<script src="js/slick.js "></script>
+<script src="js/script.js"></script>
+<script>
+    var newsBanner;
+    var Newsmodal = false;
+
+    function ShowLightBox(light_box, boxModal) {
+        document.getElementById(light_box).style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+        newsBanner = light_box;
+        if (boxModal)
+            Newsmodal = true;
+        else Newsmodal = false;
+
+    }
+
+    function HideLightBox() {
+        if (document.getElementById(newsBanner)) {
+            document.getElementById(newsBanner).style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            newsBanner = '';
+        }
+    }
+    /*$(function(){
+    	if(!getCookies("cancelAlert2")){
+    	 initoutalertbox_fn0();
+    	 addCookie("cancelAlert2","1",1);
+       }
+    })*/
+    
+    $(".searchbtn_mb,.prepage").click(function () {
+            $(".searchbox_mb").toggleClass("searchactive");
+        });
+    $(".alertinfbox").click(function () {
+    	initoutalertbox_fn0();
+    });
+    $(".alertinfbox1").click(function () {
+        initoutalertbox_fn1();
+    });
+    
+    function initoutalertbox_fn0(){
+        var alertboxw = $(window).width();
+        if (alertboxw > 1200) { alertboxw = 1200; }
+        var $form = $("#alertbox");
+        $.colorbox({
+            //iframe: true,
+            inline: true,
+            href: $form,
+            width: alertboxw, //燈箱中間區塊的寬度
+        });
+    }
+    function initoutalertbox_fn1() {
+            var alertboxw = $(window).width();
+            if (alertboxw > 1200) { alertboxw = 1200; }
+            var $form = $("#alertbox1");
+            $.colorbox({
+                //iframe: true,
+                inline: true,
+                href: $form,
+                width: alertboxw, //燈箱中間區塊的寬度
+            });
+        }
+    $('.slicknews').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    centerMode: true,
+                    centerPadding: '5px',
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    centerMode: true,
+                    centerPadding: '5px',
+                    slidesToShow: 1,
+                    lidesToScroll: 1,
+                }
+            }]
+    });
+</script>
+
+</html>

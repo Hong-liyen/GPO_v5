@@ -1,0 +1,165 @@
+@media only screen and (min-width: 601px) {
+  .wrapper {
+    width: 100vw;
+    font-family: Microsoft JhengHei;
+  }
+  .wrapper .zone_01 {
+    width: 100vw;
+    height: 478px;
+    background-color: #cedcf3;
+  }
+  .wrapper .zone_01 .zone_inside {
+    position: relative;
+    width: 70vw;
+    min-width: 1160px;
+    height: 478px;
+    margin: 0 auto;
+  }
+  .wrapper .zone_01 .zone_inside .left_side {
+    position: absolute;
+    top: -34px;
+    left: 7%;
+    width: 434px;
+    height: 500px;
+  }
+  .wrapper .zone_01 .zone_inside .left_side .logo {
+    position: absolute;
+    left: 134px;
+    width: 141px;
+    height: 86px;
+    top: 140px;
+    background: url(../img/logo.png) 0 0 no-repeat;
+    background-size: 100%;
+  }
+  .wrapper .zone_01 .zone_inside .left_side .title_type {
+    font-size: 21px;
+    font-weight: bold;
+    position: absolute;
+    top: 252px;
+    left: 161px;
+  }
+  .wrapper .zone_01 .zone_inside .left_side .content_text {
+    font-size: 14px;
+    width: 417px;
+    line-height: 19px;
+    letter-spacing: 2px;
+  }
+  .wrapper .zone_01 .zone_inside .left_side .color_01 {
+    color: #656c7f;
+  }
+  .wrapper .zone_01 .zone_inside .left_side .text_position_01 {
+    top: 292px;
+    left: -1px;
+    position: absolute;
+  }
+  .wrapper .zone_01 .zone_inside .girl_01 {
+    position: absolute;
+    /* bottom: 0; */
+    right: 21px;
+    width: 753px;
+    height: 478px;
+    background: url(../img/npc_01.png) center no-repeat;
+    background-size: 93%;
+  }
+  .wrapper .zone_02 {
+    width: 100vw;
+    height: 327px;
+    background-color: #505d73;
+  }
+  .wrapper .zone_02 .zone_inside {
+    position: relative;
+    width: 70vw;
+    min-width: 1160px;
+    height: 327px;
+    margin: 0 auto;
+  }
+  .wrapper .zone_02 .zone_inside .girl_02 {
+    position: absolute;
+    bottom: 0;
+    left: 21px;
+    width: 732px;
+    height: 373px;
+    background: url(../img/npc_02.png) center no-repeat;
+    background-size: 100%;
+  }
+  .wrapper .zone_02 .zone_inside .color_02 {
+    color: white;
+  }
+  .wrapper .zone_02 .zone_inside .text_position_02 {
+    top: 119px;
+    right: 7%;
+    position: absolute;
+  }
+  .wrapper .zone_02 .zone_inside .content_text {
+    font-size: 14px;
+    width: 417px;
+    line-height: 19px;
+    letter-spacing: 2px;
+  }
+  .wrapper .zone_03 {
+    width: 100vw;
+    height: 327px;
+    background-color: #edf3fd;
+  }
+  .wrapper .zone_03 .zone_inside {
+    position: relative;
+    width: 70vw;
+    min-width: 1160px;
+    height: 327px;
+    margin: 0 auto;
+  }
+  .wrapper .zone_03 .zone_inside .girl_03 {
+    position: absolute;
+    bottom: 0;
+    right: 21px;
+    width: 674px;
+    height: 423px;
+    background: url(../img/npc_03.png) center no-repeat;
+    background-size: 100%;
+  }
+  .wrapper .zone_03 .zone_inside .left_side_03 {
+    position: absolute;
+    top: 54px;
+    left: 7%;
+    width: 434px;
+  }
+  .wrapper .zone_03 .zone_inside .left_side_03 .color_03 {
+    color: #656c7f;
+  }
+  .wrapper .zone_03 .zone_inside .left_side_03 .text_position_03 {
+    top: 10px;
+    left: -1px;
+    position: absolute;
+  }
+  .wrapper .zone_03 .zone_inside .left_side_03 .content_text {
+    font-size: 14px;
+    width: 417px;
+    line-height: 19px;
+    letter-spacing: 2px;
+  }
+  .wrapper .zone_03 .zone_inside .left_side_03 .btn_load {
+    font-size: 20px;
+    position: absolute;
+    background-color: #333a4b;
+    text-decoration: none;
+    padding: 18px 92px 18px 72px;
+    letter-spacing: 7px;
+    color: white;
+    top: 153px;
+    left: 66px;
+    transition-duration: 0.6s;
+  }
+  .wrapper .zone_03 .zone_inside .left_side_03 .btn_load::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 187px;
+    width: 18px;
+    height: 20px;
+    background: url(../img/load_i.png) center no-repeat;
+    background-size: 90%;
+  }
+  .wrapper .zone_03 .zone_inside .left_side_03 .btn_load:hover {
+    background-color: #6b7a9f;
+  }
+}

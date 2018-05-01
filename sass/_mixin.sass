@@ -1,0 +1,65 @@
+$colorOrange: #ff6d00
+$colorBrown: #381902
+$colorBlue: #1463a5
+$width: 960px
+
+=bg($img) 
+    background-image: url("../images/bgImage/#{$img}")
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+
+=bgSide($img) 
+    background-image: url("../images/imageSide/#{$img}")
+    background-repeat: no-repeat
+
+=size($w,$h:$w)
+    width: $w
+    height: $h
+
+=position($t,$l:$t)
+    top: $t
+    left: $l
+
+=grid($cloum_number,$cloum_gutter)
+    width: ($width - $cloum_gutter*($cloum_number - 1) ) / $cloum_number
+    margin-right: $cloum_gutter
+    float: left
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    
+    &:nth-child(#{$cloum_number}n)
+        margin-right: 0
+
+=breakpoint($point)
+    @if $point == bigpc
+        @media only screen and (max-width: 1440px)
+            @content 
+    @if $point == pc
+        @media only screen and (max-width: 1024px)
+            @content 
+    @else if $point == pad 
+        @media only screen and (max-width: 768px)  
+            @content 
+    @else if $point == mobile 
+        @media only screen and (max-width: 425px)   
+            @content
+
+=range-width-in( $min: 0, $max: 0)
+    @if $max == 0
+        @media screen and (min-width: $min)
+            @content
+    @else
+        @media screen and (min-width: $min) and (max-width: $max)
+            @content
+        
+    
+@mixin css3($property, $value) 
+    @each $prefix in -webkit-,
+    -moz-,
+    -ms-,
+    -o-,
+    '' 
+        #{$prefix}#{$property}: $value
+    

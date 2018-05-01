@@ -1,0 +1,332 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+//------------------------------PC--------------------
+@media only screen and (min-width: 1025px){
+    .wrapper{
+        overflow-x: hidden;
+        width: 100vw;
+        height: 100vh;
+        font-family: Microsoft JhengHei;
+        
+        .zone_01{
+            width: 100vw;
+            height: 478px;
+            background-color: #cedcf3;
+            .title_h5{
+                display: none;
+            }
+            .content_h5{
+                display: none;
+            }
+            .zone_inside_01{
+                position: relative;
+                width: 70vw;
+                min-width: 1160px;
+                height: 478px;
+                margin: 0 auto;
+                //background-color: black;
+                img{
+                    display: none;
+                }
+                .left_side{
+                    position: absolute;
+                    top: -34px;
+                    left: 7%;
+                    width: 434px;
+                    height: 500px;
+                    .logo{
+                        position: absolute;
+                        left: 134px;
+                        width: 141px;
+                        height: 86px;
+                        top: 140px;
+                        background: url(../img/logo.png) 0 0 no-repeat;
+                        background-size: 100%;
+                    }
+                    .title_type{
+                        font-size: 21px;
+                        font-weight: bold;
+                        position: absolute;
+                        top: 252px;
+                        left: 161px;
+                    }
+                    .content_text{
+                        font-size: 14px;
+                        width: 417px;
+                        line-height: 19px;
+                        letter-spacing: 2px;
+                    }
+                    .color_01{
+                        color: #656c7f;
+                    }
+                    .text_position_01{
+                        top: 292px;
+                        left: -1px;
+                        position: absolute;
+                    }
+        
+                }
+                .girl_01{
+                    position: absolute;
+                    /* bottom: 0; */
+                    right: 21px;
+                    width: 753px;
+                    height: 478px;
+                    background: url(../img/npc_01.png) center no-repeat;
+                    background-size: 93%;
+                }
+            }
+    
+        }
+        .zone_02{
+            width: 100vw;
+            height: 327px;
+            background-color: #505d73;
+            
+            .content_h5{
+                display: none;
+            }
+            .zone_inside_02{
+                position: relative;
+                width: 70vw;
+                min-width: 1160px;
+                height: 327px;
+                margin: 0 auto;
+                //background-color: red;
+                img{
+                    display: none;
+                }
+                .girl_02{
+                    position: absolute;
+                    bottom: 0;
+                    left: 21px;
+                    width: 732px;
+                    height: 373px;
+                    background: url(../img/npc_02.png) center no-repeat;
+                    background-size: 100%;
+                }
+                .color_02{
+                    color: white;
+                }
+                .text_position_02{
+                    top: 119px;
+                    right: 7%;
+                    position: absolute;
+                }
+                .content_text{
+                    font-size: 14px;
+                    width: 417px;
+                    line-height: 19px;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+        .zone_03{
+            width: 100vw;
+            height: 327px;
+            background-color: #edf3fd;
+            .content_h5{
+                display: none;
+            }
+            .zone_inside_03{
+                position: relative;
+                width: 70vw;
+                min-width: 1160px;
+                height: 327px;
+                margin: 0 auto;
+                //background-color: rgb(0, 247, 255);
+                img{
+                    display: none;
+                }
+                .girl_03{
+                    position: absolute;
+                    bottom: 0;
+                    right: 21px;
+                    width: 674px;
+                    height: 423px;
+                    background: url(../img/npc_03.png) center no-repeat;
+                    background-size: 100%;
+                }
+                .left_side_03{
+                    position: absolute;
+                    top: 54px;
+                    left: 7%;
+                    width: 434px;
+                    .color_03{
+                        color: #656c7f;
+                    }
+                    .text_position_03{
+                        top: 10px;
+                        left: -1px;
+                        position: absolute;
+                    }
+                    .content_text{
+                        font-size: 14px;
+                        width: 417px;
+                        line-height: 19px;
+                        letter-spacing: 2px;
+                    }
+                    .btn_load{
+                        font-size: 20px;
+                        position: absolute;
+                        background-color: #333a4b;
+                        text-decoration: none;
+                        padding: 18px 92px 18px 72px;
+                        letter-spacing: 7px;
+                        color: white;
+                        top: 153px;
+                        left: 66px;
+                        transition-duration: 0.6s;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            top: 18px;
+                            left: 187px;
+                            width: 18px;
+                            height: 20px;
+                            background: url(../img/load_i.png) center no-repeat;
+                            background-size: 90%;
+                        }
+                        &:hover{
+                            background-color: #6b7a9f;
+                        }
+                    }
+                }
+    
+            }
+        }
+        .btn_aria_h5{
+            display: none;
+        }
+    }
+
+}
+
+//------------------------------mobile--------------------
+@media only screen and (max-width: 1024px){
+    .wrapper{
+        width: 100vw;
+        font-family: Microsoft JhengHei;
+        overflow-x: hidden;
+        .zone_01{
+            width: 100vw;
+            .logo_h5{
+                width: 100vw;
+                height: 89px;
+                background: url(../img/logo.png) center no-repeat;
+                background-size: 100px 58px;
+            }
+            .color_01{
+                color: #656c7f;
+            }
+            .title_h5{
+                text-align: center;
+                font-size: 2em;
+                font-weight: bold;
+                margin: 30px 0 15px;
+            }
+            .content_h5{
+                width: 86vw;
+                font-size: 20px;
+                margin: 0 auto 25px;
+                line-height: 27px;
+            }
+            .zone_inside_01{
+                display: block;
+                width: 100vw;
+                //height: 478px;
+                margin: 0 auto;
+                background: url(../img/npc_01_h5.jpg) top center no-repeat;
+                background-size: 130%;
+                //background-color: black;
+                .left_side{
+                    display:none;
+                }
+            }
+    
+        }
+
+        .zone_02{
+            width: 100vw;
+            .zone_inside_02{
+                display: block;
+                width: 100vw;
+                //height: 478px;
+                margin: 0 auto;
+                background: url(../img/npc_02_h5.jpg) top center no-repeat;
+                background-size: 118%;
+                .content_text{
+                    display: none;
+                }
+            }
+            .content_h5{
+                width: 86vw;
+                font-size: 20px;
+                margin: 22px auto 25px;
+                line-height: 27px;
+            }
+            .color_01{
+                color: #656c7f;
+            }
+        }
+        .zone_03{
+            width: 100vw;
+            .zone_inside_03{
+                display: block;
+                width: 100vw;
+                //height: 478px;
+                margin: 0 auto;
+                background: url(../img/npc_03_h5.jpg) top center no-repeat;
+                background-size: 118%;
+
+                .left_side_03{
+                    display: none;
+                }
+    
+            }
+            .content_h5{
+                width: 86vw;
+                font-size: 20px;
+                margin: 12px auto 22px;
+                line-height: 27px;
+            }
+            .color_01{
+                color: #656c7f;
+            }
+        }
+        .btn_aria_h5{
+            background-color: #333a4b;
+            padding: 22px 10%;
+            margin: 25px 5% 33px;
+            //cursor: pointer;
+            .btn_c_h5{
+                position: relative;
+                margin: 0 auto;
+                width: 166px;
+                height: 26px;
+                .btn_load_h5{
+                    position: absolute;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: white;
+                    letter-spacing: 11px;
+                }
+                .loadicon_h5{
+                    position: absolute;
+                    width: 17px;
+                    height: 30px;
+                    background: url(../img/load_i.png) center no-repeat;
+                    background-size: 104%;
+                    left: 146px;
+                    top: -2px;
+                }
+            }
+        }
+    }
+
+}
