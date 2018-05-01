@@ -36,12 +36,12 @@ var vm = new Vue({
                 istopbanner: true, //是否首页展示
                 clickto: false, //是否有内页跳窗公告
                 link: "CQ9/index.html", //点击连结,下载檔案
-                downloadbtn: false, //是否有下载按钮
+                downloadbtn: true, //是否有下载按钮
                 downloadlink: "", //下载连结
                 mainbannerimg: "images/activebanner/20180430_cq9.jpg", //首页大图2500*1080
                 bannerimg: "images/activebanner/20180430_cq9_s.jpg", //公告内页小图1410*385
                 name: "亚洲最具规模的游戏研发企业!!", //公告名称(最好8个全形字以内),download活动素材/轮播图
-                time: "2018/5", //活动日期
+                time: "2018/05", //活动日期
                 containtext: '\
                     <div style="text-align:center;"><a href="luckyairship/index.html" target="_blank">前往活动连结</a></div>' //内容html
             },
@@ -51,12 +51,12 @@ var vm = new Vue({
                 istopbanner: true, //是否首页展示
                 clickto: false, //是否有内页跳窗公告
                 link: "20180425_vgs/index.html", //点击连结,下载檔案
-                downloadbtn: false, //是否有下载按钮
+                downloadbtn: true, //是否有下载按钮
                 downloadlink: "", //下载连结
                 mainbannerimg: "images/activebanner/20180430_vgs.jpg", //首页大图2500*1080
                 bannerimg: "images/activebanner/20180430_vgs_s.jpg", //公告内页小图1410*385
                 name: "享受真实赌场的精彩刺激!!", //公告名称(最好8个全形字以内),download活动素材/轮播图
-                time: "2018/5", //活动日期
+                time: "2018/05", //活动日期
                 containtext: '\
                     <div style="text-align:center;"><a href="luckyairship/index.html" target="_blank">前往活动连结</a></div>' //内容html
             },
@@ -71,7 +71,7 @@ var vm = new Vue({
                 mainbannerimg: "images/activebanner/mainbanner_01.jpg", //首页大图2500*1080
                 bannerimg: "images/activebanner/infbanner_01.jpg", //公告内页小图1410*385
                 name: "幸运相伴，让您梦想成真！", //公告名称(最好8个全形字以内),download活动素材/轮播图
-                time: "2018/3", //活动日期
+                time: "2018/03", //活动日期
                 containtext: '\
                     <div style="text-align:center;"><a href="luckyairship/index.html" target="_blank">前往活动连结</a></div>' //内容html
             },
